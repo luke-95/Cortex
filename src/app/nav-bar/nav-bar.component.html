@@ -24,7 +24,16 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span> {{ title }}</span>
+      <button
+        class="notif-button"
+        type="button"
+        aria-label="Open notifications"
+        mat-icon-button
+        (click)="notificationsClicked()">
+        <mat-icon aria-label="Notifications button icon" matBadge="2" matBadgeColor="warn" [matBadgeHidden]="visible">notifications</mat-icon>
+      </button>
     </mat-toolbar>
     <app-dashboard></app-dashboard>
+    <app-generic-table></app-generic-table>
   </mat-sidenav-content>
 </mat-sidenav-container>

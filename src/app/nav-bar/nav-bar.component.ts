@@ -20,4 +20,11 @@ export class NavBarComponent {
     
   constructor(private breakpointObserver: BreakpointObserver) {}
   
+    private notificationsClicked()
+    {
+      
+    }
+
   }
+
+

@@ -6,7 +6,8 @@ import {
   MatToolbar,   //Toolbar
   MatCardModule,
   MatCheckboxModule,
-  MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatMenuModule
+  MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule,
+  MatBadgeModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { ImgCardComponent } from './img-card/img-card.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { GenericTableComponent } from './generic-table/generic-table.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavBarComponent,
     ImgCardComponent,
     NavBarComponent,
-    DashboardComponent
+    DashboardComponent,
+    GenericTableComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatListModule,
     MatGridListModule,
     MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

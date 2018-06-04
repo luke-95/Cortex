@@ -19,11 +19,16 @@ $theme: mat-light-theme($primary, $accent, $warn);
  
     footer {
         background-color: mat-color($primary);
-        color: white;
+        color: #ffffff;
     }
  
     footer a {
         color: white;
+    }
+
+    .notif-button {
+        margin-left:auto !important;
+        display:block !important;
     }
 }
  
