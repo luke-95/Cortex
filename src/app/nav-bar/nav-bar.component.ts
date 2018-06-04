@@ -12,6 +12,7 @@ import { AppComponent } from '../app.component';
 })
 export class NavBarComponent {
   title = AppComponent.nav_bar_title;
+  notif_badge_hidden = false;
   
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
