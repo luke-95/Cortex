@@ -1,7 +1,6 @@
 <div class="grid-container" style="width:auto">
-  <h1 class="mat-h1">Dashboard</h1>
   <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile *ngFor="let card of cards" [colspan]="(isHandset$ | async) ? '2' : '1'" [rowspan]="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
@@ -16,7 +15,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div> {{card.content}} </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

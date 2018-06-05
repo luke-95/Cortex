@@ -26,10 +26,22 @@ $theme: mat-light-theme($primary, $accent, $warn);
         color: white;
     }
 
+    .menu-icon {
+        padding-right:5px;
+    }
+
     .notif-button {
         margin-left:auto !important;
         display:block !important;
     }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+
+    .mat-tab-header {
+        overflow: auto !important;
+      }
 }
  
 @include supporting-theme($theme);
