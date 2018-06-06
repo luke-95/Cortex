@@ -27,7 +27,6 @@ export class SpacesTabsComponent implements OnInit {
       title: 'Garage',
       content: '<app-dashboard></app-dashboard>',
     },
-    
   ]
 
   constructor() { }

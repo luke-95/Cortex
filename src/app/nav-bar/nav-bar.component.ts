@@ -21,7 +21,7 @@ export class NavBarComponent {
     ['security', 'We have updated our privacy policy'],
   ];
   
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
   .pipe(
     map(result => result.matches)
   );

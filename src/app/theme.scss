@@ -38,10 +38,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
     .spacer {
         flex: 1 1 auto;
     }
-
-    .mat-tab-header {
-        overflow: auto !important;
-      }
 }
  
 @include supporting-theme($theme);

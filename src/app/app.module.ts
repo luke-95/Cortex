@@ -3,6 +3,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 
+
+// import { BehaviorSubject } from 'rxjs';
+// import { FlexLayoutModule } from '@angular/flex-layout';
+
+
 import { 
   MatToolbar,   //Toolbar
   MatCardModule,
@@ -43,6 +48,8 @@ import { SpacesTabsComponent } from './spaces-tabs-component/spaces-tabs-compone
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    // BehaviorSubject,
+    // FlexLayoutModule,
     LayoutModule,
 
     //Material Modules

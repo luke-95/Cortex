@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -7,18 +6,11 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
+
 export class DashboardComponent {
-  constructor (private breakpointObserver: BreakpointObserver,)
-  {
-  }
-
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches)
-  );
-
+  cols = 2;
   cards = [
     { 
       title: 'Media', 
@@ -45,4 +37,18 @@ export class DashboardComponent {
       content: 'No extra devices installed.'
     }
   ];
+
+  constructor (private breakpointObserver: BreakpointObserver,)
+  {
+  }
+
+  ngOnInit()
+  {
+  }
+
+  isSmallScreen$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
+  .pipe(
+    map(result => result.matches)
+  )
+
 }
