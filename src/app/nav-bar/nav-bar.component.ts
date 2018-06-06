@@ -5,6 +5,9 @@ import { map } from 'rxjs/operators';
 import { AppComponent } from '../app.component';
 import { MatSnackBar } from '@angular/material';
 
+import { Router} from '@angular/router';
+
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -25,7 +28,7 @@ export class NavBarComponent {
   .pipe(
     map(result => result.matches)
   );
-    
+  
   constructor(
     private breakpointObserver: BreakpointObserver,
     public snackBar: MatSnackBar,
