@@ -1,38 +1,57 @@
-<mat-card class="account-card">
-    <mat-card-header>
+<mat-card class="username-card t-center">
+    <mat-card-header class="b-pad-35">
         <div mat-card-avatar class="account-header-image" style="background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');"></div>
         <mat-card-title>Username</mat-card-title>
         <mat-card-subtitle>User class</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content role="region">
+    <mat-card-content>
+        <div class='section-title'>
+            Change username
+        </div>
         <p>
             <mat-form-field appearance="outline">
-                <mat-label>Change username</mat-label>
-                <input matInput placeholder="New username">
+                <mat-label>New username</mat-label>
+                <input matInput type="text" placeholder="New username">
             </mat-form-field>
         </p>
-        <p class="form-divider"></p>
         <p>
             <mat-form-field appearance="outline">
                 <mat-label>Current password</mat-label>
-                <input matInput placeholder="New password">
+                <input matInput type="password"  placeholder="Current password">
+            </mat-form-field>
+        </p>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="password-card t-center">
+    <mat-card-content>
+        <div class='section-title'>
+            Change password
+        </div>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Current password</mat-label>
+                <input matInput type="password" placeholder="Current password">
             </mat-form-field>
         </p>
         <p>
             <mat-form-field appearance="outline">
                 <mat-label>New password</mat-label>
-                <input matInput placeholder="New password">
+                <input matInput type="password"  placeholder="New password">
             </mat-form-field>
         </p>
         <p>
             <mat-form-field appearance="outline">
-                <mat-label>Confirm password</mat-label>
-                <input matInput placeholder="Confirm password">
+                <mat-label>Confirm new password</mat-label>
+                <input matInput type="password"  placeholder="Confirm password">
             </mat-form-field>
         </p>
-        <mat-card-actions>
-            <button mat-button color="warn">Cancel</button>
-            <button mat-button color="primary">Apply</button>
-        </mat-card-actions>
     </mat-card-content>
+</mat-card>
+
+<mat-card class="actions-card">
+    <mat-card-actions>
+        <button mat-button color="warn">Cancel</button>
+        <button mat-button color="primary">Apply</button>
+    </mat-card-actions>
 </mat-card>

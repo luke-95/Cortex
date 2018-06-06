@@ -1,38 +1,42 @@
+.l-pad-35 {
+    padding-left:35px;
+}
 
-.mat-card {
-    width:95%;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom: 10px;
-    margin-top: 15px;
-    padding-bottom: 35px;
+.t-center {
+    text-align:center;
 }
 
 .form-divider {
     height:15px;
 }
 
+.username-card {
+    padding-top: 50px;
+    padding-bottom: 35px;
+}
+
+.password-card {
+    padding-bottom: 35px;
+}
+
 .mat-card-header {
     width:fit-content;
-    min-width:465px;
+    min-width:500px;
     margin-left:auto;
     margin-right:auto;
-    padding-left:35px;
-    padding-top:15px;
+    padding-bottom:35px;
 }
 
 .account-header-image {
     background-size:cover;
 }
 
-.mat-card-content {
-    text-align: center;
-    padding-top: 40px;
-}
-
-.mat-card-content {
-    text-align: center;
-    padding-top: 40px;
+.section-title {
+    width:80%;
+    max-width:500px;
+    text-align:left;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .mat-form-field {
@@ -41,9 +45,10 @@
     max-width:500px;
 }
 
-.mat-card-actions {
+.actions-card {
     text-align:center;
-    padding-top:35px;
+    padding-bottom:35px;
+    margin-bottom:10px;
 }
 
 .mat-button {

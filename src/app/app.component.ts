@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  static nav_bar_title = 'SmartHouse 0.2';
+  static app_title = 'SmartHouse 0.4';
 }

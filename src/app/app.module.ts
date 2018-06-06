@@ -17,7 +17,9 @@ import {
   MatBadgeModule,
   MatSnackBarModule,
   MatInputModule,
-  MatDividerModule
+  MatDividerModule,
+  MatSlideToggleModule,
+  MatSelectModule,
 } from '@angular/material';
 
 import { MatMenuModule } from '@angular/material/menu';
@@ -75,6 +77,8 @@ import { AccountPageComponent } from './account-page/account-page.component';
     MatFormFieldModule,
     MatInputModule,
     MatDividerModule,
+    MatSlideToggleModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

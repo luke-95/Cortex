@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChange, SimpleChanges } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { AppComponent } from '../app.component';
 import { MatSnackBar } from '@angular/material';
 
-import { Router} from '@angular/router';
+import { Router, RouterEvent, ActivatedRoute, NavigationEnd} from '@angular/router';
 
 
 @Component({
@@ -15,9 +15,17 @@ import { Router} from '@angular/router';
 })
 
 export class NavBarComponent {
-  title = AppComponent.nav_bar_title;
+  app_title = AppComponent.app_title;
+  nav_title = "Spaces";
+  current_window = "";
   notif_badge_hidden = false;
   static snackbar_duration = 2000;
+
+  title_dict = {
+    '/spaces' : "Spaces",
+    '/settings' : "Settings",
+    '/account' : "Account"
+  }
 
   notif_list = [
     ['devices', 'New device installed'],
@@ -32,7 +40,23 @@ export class NavBarComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     public snackBar: MatSnackBar,
-  ) { }
+    private router: Router,
+  ) 
+  {
+    
+  }
+  
+   ngOnInit()
+   {
+    this.router.events.pipe(
+      filter((event:RouterEvent) => event instanceof NavigationEnd)
+    ).subscribe(x => this.nav_title=this.title_dict[x.url])
+   }
+
+  ngOnChanges(changes:SimpleChanges)
+  {
+    console.log(changes);
+  }
 
 
   public openSnackBar(message: string, action: string) {
