@@ -25,7 +25,7 @@ const appRoutes:Routes = [
     },
     {
         path:'',
-        redirectTo: 'settings',
+        redirectTo: 'spaces',
         pathMatch: 'full'
     },
     { path: '**', component: PageNotFoundComponent }
