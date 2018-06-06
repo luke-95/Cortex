@@ -8,11 +8,27 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+import { AccountPageComponent } from './account-page/account-page.component';
+import { SpacesTabsComponent } from './spaces-tabs-component/spaces-tabs-component.component';
 
 
 const appRoutes:Routes = [
-    {path:'', component:AppComponent},
-    {path:'settings', component:SettingsComponent}
+    {
+        path:'account', component:AccountPageComponent
+    },
+    {
+        path:'settings', component:SettingsComponent
+    },
+    {
+        path:'spaces', component:SpacesTabsComponent
+    },
+    {
+        path:'',
+        redirectTo: 'settings',
+        pathMatch: 'full'
+    },
+    { path: '**', component: PageNotFoundComponent }
 ]
 
 @NgModule({

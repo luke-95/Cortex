@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
+import { Router} from '@angular/router';
 
 
-// import { BehaviorSubject } from 'rxjs';
-// import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { AppComponent } from './app.component';
+import { AppRoutingModule }        from './app-routing.module';
 
 import { 
   MatToolbar,   //Toolbar
@@ -23,7 +22,6 @@ import {
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 
-import { AppComponent } from './app.component';
 import { ImgCardComponent } from './img-card/img-card.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -32,7 +30,9 @@ import { GenericTableComponent } from './generic-table/generic-table.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SpacesTabsComponent } from './spaces-tabs-component/spaces-tabs-component.component';
 
-
+import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AccountPageComponent } from './account-page/account-page.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +44,17 @@ import { SpacesTabsComponent } from './spaces-tabs-component/spaces-tabs-compone
     GenericTableComponent,
     SettingsComponent,
     SpacesTabsComponent,
+    PageNotFoundComponent,
+    AccountPageComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    // BehaviorSubject,
-    // FlexLayoutModule,
     LayoutModule,
+    ScrollDispatchModule,
+
+    //Routing
+    AppRoutingModule,
 
     //Material Modules
     MatCardModule,
@@ -67,6 +71,7 @@ import { SpacesTabsComponent } from './spaces-tabs-component/spaces-tabs-compone
     MatSortModule,
     MatBadgeModule,
     MatSnackBarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

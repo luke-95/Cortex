@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'spaces-tabs-component',
   templateUrl: './spaces-tabs-component.component.html',
