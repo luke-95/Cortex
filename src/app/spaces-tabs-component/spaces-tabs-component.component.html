@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-content>
-      <mat-tab-group>
+      <mat-tab-group flex>
         <mat-tab *ngFor="let my_space of spaces_list" label={{my_space.title}}>
           <ng-template matTabContent>
             <app-dashboard [title]="my_space.title"></app-dashboard>

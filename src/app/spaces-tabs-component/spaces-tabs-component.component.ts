@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 
-
 @Component({
   selector: 'spaces-tabs-component',
   templateUrl: './spaces-tabs-component.component.html',
   styleUrls: ['./spaces-tabs-component.component.css']
 })
-export class SpacesTabsComponent implements OnInit {
+export class DevicesComponent implements OnInit {
   spaces_list = [
     {
       title: 'Bedroom',

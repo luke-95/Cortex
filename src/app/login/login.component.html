@@ -1,0 +1,88 @@
+<mat-toolbar color="primary">
+  SmartHouse
+</mat-toolbar>
+
+<mat-card class='main-login'>
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Login">
+      <mat-card-content>
+          <mat-card-title class="login-title-padding">Please login to continue</mat-card-title>
+          <form (ngSubmit)="onSubmit()">
+            <p>
+              <mat-form-field  appearance="outline">
+                <input matInput placeholder="Username" formControlName="userName" required>
+                <mat-error *ngIf="isFieldInvalid('userName')">
+                  Please enter your user name
+                </mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field  appearance="outline">
+                <input matInput type="password" placeholder="Password" formControlName="password" required>
+                <mat-error *ngIf="isFieldInvalid('password')">
+                  Please enter your password
+                </mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <button mat-raised-button 
+              color="primary"
+              class="login-button"
+              (click)='attemptLogin()'
+              >
+              Login
+            </button>
+            </p>
+          </form>
+        </mat-card-content>  
+      </mat-tab>
+      <mat-tab label="Register">
+        <mat-card-content>
+          <mat-card-title class="register-title-padding">New Account</mat-card-title>
+            <form (ngSubmit)="onSubmit()">
+                <p>
+                  <mat-form-field appearance="outline">
+                    <input matInput placeholder="Email" formControlName="email" required>
+                    <mat-error *ngIf="isFieldInvalid('email')">
+                      Please enter your user name
+                    </mat-error>
+                  </mat-form-field>
+                </p>
+                <p>
+                  <mat-form-field appearance="outline">
+                    <input matInput placeholder="Username" formControlName="userName" required>
+                    <mat-error *ngIf="isFieldInvalid('userName')">
+                      Please enter your user name
+                    </mat-error>
+                  </mat-form-field>
+                </p>
+                <p>
+                  <mat-form-field appearance="outline">
+                    <input matInput type="password" placeholder="Password" formControlName="password" required>
+                    <mat-error *ngIf="isFieldInvalid('password')">
+                      Please enter your password
+                    </mat-error>
+                  </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" required>
+                      <mat-error *ngIf="isFieldInvalid('confirmPassword')">
+                        Please confirm your password
+                      </mat-error>
+                    </mat-form-field>
+                  </p>
+                <p>
+                  <button mat-raised-button 
+                  color="primary"
+                  class="register-button"
+                  (click)='attemptRegister()'
+                  >
+                  Register
+                </button>
+                </p>
+              </form>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+</mat-card>

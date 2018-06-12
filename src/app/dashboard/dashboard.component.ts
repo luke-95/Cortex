@@ -13,28 +13,28 @@ export class DashboardComponent {
   cols = 2;
   cards = [
     { 
-      title: 'Media', 
+      title: 'Speakers', 
       cols: 1, 
       rows: 1 , 
-      content: 'No media devices installed.'
+      content: ' <content> '
     },
     { 
-      title: 'Security', 
+      title: 'TV', 
       cols: 1, 
       rows: 1, 
-      content: 'No security devices installed.'
+      content: ' <content> '
     },
     { 
-      title: 'Ambience',
+      title: 'Security camera',
        cols: 1,
        rows: 1 , 
-       content: 'No ambience devices installed.'
+       content: ' <content> '
       },
     { 
-      title: 'Extra', 
+      title: 'Google Home', 
       cols: 1, 
       rows: 1 , 
-      content: 'No extra devices installed.'
+      content: ' <content> '
     }
   ];
 

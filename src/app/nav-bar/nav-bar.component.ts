@@ -5,59 +5,64 @@ import { map, filter } from 'rxjs/operators';
 import { AppComponent } from '../app.component';
 import { MatSnackBar } from '@angular/material';
 
-import { Router, RouterEvent, ActivatedRoute, NavigationEnd} from '@angular/router';
+import { Router, RouterEvent, NavigationEnd, Routes} from '@angular/router';
+
 
 
 @Component({
-  selector: 'app-nav-bar',
+  selector: 'nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
 
+
 export class NavBarComponent {
+  
   app_title = AppComponent.app_title;
-  nav_title = "Spaces";
+  nav_title = "Devices";
   current_window = "";
   notif_badge_hidden = false;
   static snackbar_duration = 2000;
 
-  title_dict = {
-    '/spaces' : "Spaces",
-    '/settings' : "Settings",
-    '/account' : "Account"
+  route_data_dict = {
+    '/home/devices' : ["Devices", 'dashboard'],
+    '/home/account' : ["Account", 'account_circle'],
+    '/home/settings' : ["Settings", 'settings'],
+    '/login' : ["Logout", 'exit_to_app'],
   }
 
   notif_list = [
-    ['devices', 'New device installed'],
     ['security', 'We have updated our privacy policy'],
+    ['devices', 'New device installed'],
   ];
-  
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
-  .pipe(
-    map(result => result.matches)
-  );
-  
+
+
+  private readonly route_titles = Object.keys(this.route_data_dict);
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     public snackBar: MatSnackBar,
     private router: Router,
   ) 
   {
-    
+    //empty
   }
   
    ngOnInit()
    {
-    this.router.events.pipe(
-      filter((event:RouterEvent) => event instanceof NavigationEnd)
-    ).subscribe(x => this.nav_title=this.title_dict[x.url])
+      this.router.events.pipe(
+        filter((event:RouterEvent) => event instanceof NavigationEnd)
+      ).subscribe(
+        x => {
+          this.nav_title=this.route_data_dict[x.url][0]
+        }
+      )
    }
 
   ngOnChanges(changes:SimpleChanges)
   {
     console.log(changes);
   }
-
 
   public openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
@@ -69,6 +74,11 @@ export class NavBarComponent {
   {
     console.log("notif click registered");
   }
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
+  .pipe(
+    map(result => result.matches)
+  );
 }
 
 
