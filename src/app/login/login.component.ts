@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  private isFieldInvalid(field: string) {
+  public isFieldInvalid(field: string) {
     let retVal = true;
     if (field == 'userName')
     {

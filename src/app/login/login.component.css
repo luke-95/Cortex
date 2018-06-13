@@ -1,6 +1,6 @@
 .main-login {
     text-align:center;
-    min-height: 500px;
+    min-height: 400px;
     min-width: 400px;
     
     padding-bottom: 20px;
@@ -32,9 +32,11 @@
 }
 
 .login-button {
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .register-button {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

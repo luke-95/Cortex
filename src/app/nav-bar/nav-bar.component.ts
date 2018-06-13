@@ -37,7 +37,7 @@ export class NavBarComponent {
   ];
 
 
-  private readonly route_titles = Object.keys(this.route_data_dict);
+  public readonly route_titles = Object.keys(this.route_data_dict);
 
   constructor(
     private breakpointObserver: BreakpointObserver,
