@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { DeviceCardComponent } from '../device-card/device-card.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,29 +14,34 @@ export class DashboardComponent {
   cols = 2;
   cards = [
     { 
+      title: 'Thermometer', 
+      cols: 1, 
+      rows: 1 , 
+      content: ' <content> ',
+      type: 'TempSensor'
+    },
+    { 
       title: 'Speakers', 
       cols: 1, 
       rows: 1 , 
-      content: ' <content> '
+      content: ' <content> ',
+      type: 'other'
     },
     { 
       title: 'TV', 
       cols: 1, 
       rows: 1, 
-      content: ' <content> '
+      content: ' <content> ',
+      type: 'other'
     },
     { 
       title: 'Security camera',
        cols: 1,
        rows: 1 , 
-       content: ' <content> '
-      },
-    { 
-      title: 'Google Home', 
-      cols: 1, 
-      rows: 1 , 
-      content: ' <content> '
-    }
+       content: ' <content> ',
+       type: 'other'
+    },
+    
   ];
 
   constructor (private breakpointObserver: BreakpointObserver,)

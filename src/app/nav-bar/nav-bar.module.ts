@@ -37,6 +37,7 @@ import {
  } from '@angular/material';
 import { AuthGuard } from '../auth-guard.service';
 import { AuthService } from '../auth.service';
+import { DeviceCardComponent } from '../device-card/device-card.component';
  
  
 @NgModule({

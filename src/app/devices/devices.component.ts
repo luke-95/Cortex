@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class DevicesComponent implements OnInit {
   spaces_list = [
     {
-      title: 'Bedroom',
+      title: 'Favorites',
       content: '<app-dashboard></app-dashboard>',
     },
     {
-      title: 'Living room',
+      title: 'All',
       content: '<app-dashboard></app-dashboard>',
     },
     {
@@ -25,7 +25,7 @@ export class DevicesComponent implements OnInit {
       content: '<app-dashboard></app-dashboard>',
     },
     {
-      title: 'Garage',
+      title: 'My Custom Category',
       content: '<app-dashboard></app-dashboard>',
     },
   ]

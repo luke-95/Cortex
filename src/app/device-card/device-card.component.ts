@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'device-card',
@@ -8,18 +8,18 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class DeviceCardComponent implements OnInit {
+  @Input() name: string;
+  @Input() type:string;
 
-  type_to_name_dict = {
+  private type_to_name_dict = {
     'TempSensor' : 'Temperature sensor',
   }
 
   public readonly type_keys = Object.keys(this.type_to_name_dict);
 
-  name = 'Device';
-  type = 'TempSensor';
 
   constructor() {
-    this.name = this.type_to_name_dict[this.type];
+
   }
   
   onSelect(event) {

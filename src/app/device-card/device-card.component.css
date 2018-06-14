@@ -1,5 +1,6 @@
 .device-card {
-
+    max-height: 350px;
+    padding: 24px 10px 5px 10px;
 }
 
 .device-card-content {

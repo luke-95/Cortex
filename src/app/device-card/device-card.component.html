@@ -4,5 +4,8 @@
   </mat-card-header>
   <mat-card-content class='device-card-content' [ngSwitch]='type'>
     <device-temp-sensor *ngSwitchCase="type_keys[0]"></device-temp-sensor>
+    <div *ngSwitchDefault>
+      <h3>I am empty</h3>
+    </div>
   </mat-card-content>
 </mat-card>

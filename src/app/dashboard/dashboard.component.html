@@ -1,11 +1,15 @@
 <div class="grid-container" style="width:auto">
   <mat-grid-list [cols]="(isSmallScreen$ | async) ? 1 : 2" [rowHeight]="(isSmallScreen$ | async) ? '450px' : '400px'">
     
-    <mat-grid-tile *ngFor="let card of cards" colspan="1" rowspan="1">
-      <device-card class="dashboard-card" 
-      [ngStyle]="{'max-width': (isSmallScreen$ | async) ? '550px' : '500px'}"
-      >
-      </device-card>
+    <mat-grid-tile *ngFor="let card of cards" colspan="1" rowspan="1" >
+      <device-card 
+        class="dashboard-card"
+        [ngStyle]="{
+          'max-width': (isSmallScreen$ | async) ? '550px' : '500px'
+        }"
+        [name]="card.title"
+        [type]="card.type"
+      ></device-card>
     </mat-grid-tile>
 
     <!-- <mat-grid-tile>
@@ -26,6 +30,5 @@
         </mat-card-content>
       </mat-card>
     </mat-grid-tile> -->
-
   </mat-grid-list>
 </div>
