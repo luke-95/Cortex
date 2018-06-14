@@ -9,7 +9,7 @@
       "urls": [
         "https://luke-95.github.io/SmartHouse/favicon.ico",
         "https://luke-95.github.io/SmartHouse/index.html",
-        "https://luke-95.github.io/SmartHouse/main.add6f220bcfb716a7aac.js",
+        "https://luke-95.github.io/SmartHouse/main.36c66592ba26fbfcec02.js",
         "https://luke-95.github.io/SmartHouse/polyfills.e3633a42d1123afc5fc9.js",
         "https://luke-95.github.io/SmartHouse/runtime.a66f828dca56eeb90e02.js",
         "https://luke-95.github.io/SmartHouse/styles.0ea210a884baa9f63224.css"
@@ -21,6 +21,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
+        "https://luke-95.github.io/SmartHouse/assets/config.json",
         "https://luke-95.github.io/SmartHouse/assets/icons/icon-128x128.png",
         "https://luke-95.github.io/SmartHouse/assets/icons/icon-144x144.png",
         "https://luke-95.github.io/SmartHouse/assets/icons/icon-152x152.png",
@@ -36,6 +37,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "https://luke-95.github.io/SmartHouse/assets/config.json": "141115c1c1a521fc4a61b81f850ad4aa229bca48",
     "https://luke-95.github.io/SmartHouse/assets/icons/icon-128x128.png": "1ef952cd943feecb7ba890515bf2218b565f9bfb",
     "https://luke-95.github.io/SmartHouse/assets/icons/icon-144x144.png": "f99d1b3f69d7061d28b825c0522e791c1cfc07d7",
     "https://luke-95.github.io/SmartHouse/assets/icons/icon-152x152.png": "386843d0a3ed03104d46b5a6507da5eac134223f",
@@ -46,8 +48,8 @@
     "https://luke-95.github.io/SmartHouse/assets/icons/icon-72x72.png": "7899911f0c1a5b3d1ea14cf8fc99b7bcc1631f29",
     "https://luke-95.github.io/SmartHouse/assets/icons/icon-96x96.png": "670f567a5aa6fb57ad6a573de0d389267cf5a81d",
     "https://luke-95.github.io/SmartHouse/favicon.ico": "2c864039ab47dec0735edb28cfe10f5cbc55afdb",
-    "https://luke-95.github.io/SmartHouse/index.html": "2c4eaf9e72dc433b2a21930f1caa9e97becce47f",
-    "https://luke-95.github.io/SmartHouse/main.add6f220bcfb716a7aac.js": "6fd4b8efe67cf9ae674689c50fb3aa645897374b",
+    "https://luke-95.github.io/SmartHouse/index.html": "82fb1ba78e8424139e4797b9460354d2ac858ea8",
+    "https://luke-95.github.io/SmartHouse/main.36c66592ba26fbfcec02.js": "f0311e8abf542e21a5e33eef5cf29f2b0de94fdc",
     "https://luke-95.github.io/SmartHouse/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
     "https://luke-95.github.io/SmartHouse/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
     "https://luke-95.github.io/SmartHouse/styles.0ea210a884baa9f63224.css": "49cec9e55f9a249acc57dc25f6f55c1b021b5045"
