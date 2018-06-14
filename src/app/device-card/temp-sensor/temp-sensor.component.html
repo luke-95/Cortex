@@ -1,0 +1,14 @@
+<div class='canvas-container'>
+  <canvas baseChart
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)">
+  </canvas>
+</div>
+<div class='button-container'>
+  <button mat-button color='accent' (click)="randomize()">Randomize</button>
+</div>

@@ -1,26 +1,15 @@
 <div class="grid-container" style="width:auto">
-  <mat-grid-list [cols]="(isSmallScreen$ | async) ? 1 : 2" rowHeight="350px">
+  <mat-grid-list [cols]="(isSmallScreen$ | async) ? 1 : 2" [rowHeight]="(isSmallScreen$ | async) ? '450px' : '400px'">
+    
     <mat-grid-tile *ngFor="let card of cards" colspan="1" rowspan="1">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div> {{card.content}} </div>
-        </mat-card-content>
-      </mat-card>
+      <device-card class="dashboard-card" 
+      [ngStyle]="{'max-width': (isSmallScreen$ | async) ? '550px' : '500px'}"
+      >
+      </device-card>
     </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card class="dashboard-card">
+
+    <!-- <mat-grid-tile>
+      <mat-card class="dashboard-card" [ngStyle]="{'max-width': (isSmallScreen$ | async) ? '550px' : '500px'}">
         <mat-card-header>
             <mat-card-title> 
               Add device 
@@ -36,6 +25,7 @@
           </button>
         </mat-card-content>
       </mat-card>
-    </mat-grid-tile>
+    </mat-grid-tile> -->
+
   </mat-grid-list>
 </div>

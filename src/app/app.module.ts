@@ -4,22 +4,21 @@ import { NgModule } from '@angular/core';
 import { Router} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-
+//Third-party modules
+// import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartsModule } from 'ng2-charts';
 
 
 // Project modules
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarModule } from './nav-bar/nav-bar.module';
 
-
 // Project components
 import { AppComponent } from './app.component';
-import { ImgCardComponent } from './img-card/img-card.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { GenericTableComponent } from './generic-table/generic-table.component';
 import { SettingsComponent } from './settings/settings.component';
-import { DevicesComponent } from './spaces-tabs-component/spaces-tabs-component.component';
+import { DevicesComponent } from './devices/devices.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AccountPageComponent } from './account-page/account-page.component';
 import { LoginComponent } from './login/login.component';
@@ -42,23 +41,25 @@ import {
   MatDividerModule,
   MatSlideToggleModule,
   MatSelectModule,
-  
+  MatTooltipModule,
 } from '@angular/material';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { DeviceCardComponent } from './device-card/device-card.component';
+import { TempSensorComponent } from './device-card/temp-sensor/temp-sensor.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImgCardComponent,
     DashboardComponent,
-    GenericTableComponent,
     SettingsComponent,
     DevicesComponent,
     PageNotFoundComponent,
     AccountPageComponent,
     LoginComponent,
+    DeviceCardComponent,
+    TempSensorComponent,
 
   ],
   imports: [
@@ -67,10 +68,10 @@ import { AuthGuard } from './auth-guard.service';
     LayoutModule,
     HttpClientModule,
     
-    // Custom modules
+    // Custom Modules
     NavBarModule,
 
-    //Routing modules
+    //Routing Modules
     AppRoutingModule,
     
     //Material Modules
@@ -93,6 +94,11 @@ import { AuthGuard } from './auth-guard.service';
     MatDividerModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatTooltipModule,
+
+    //Other Modules
+    // NgxChartsModule
+    ChartsModule
   ],
   providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]

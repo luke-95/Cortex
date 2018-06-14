@@ -8,8 +8,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AccountPageComponent } from '../account-page/account-page.component';
 import { SettingsComponent } from '../settings/settings.component';
-import { DevicesComponent } from '../spaces-tabs-component/spaces-tabs-component.component';
+import { DevicesComponent } from '../devices/devices.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+
+//Third-party modules
+import { ChartsModule } from 'ng2-charts';
 
 import { 
   MatIconModule, 
@@ -41,7 +44,8 @@ import { AuthService } from '../auth.service';
     CommonModule,
     RouterModule,
     // NavBarRoutingModule,
-
+    ChartsModule,
+    
     //Material Modules
     MatCardModule,
     MatButtonModule,

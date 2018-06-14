@@ -1,10 +1,19 @@
 .main-login {
     text-align:center;
     min-height: 400px;
-    min-width: 400px;
+    min-width: 300px;
     
     padding-bottom: 20px;
     margin-bottom: 0px;
+}
+
+.main-login-content {
+    text-align:center;
+    width:80%;
+    max-width:650px;
+    min-width:300px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .login-title-padding {
@@ -18,17 +27,19 @@
 }
 
 .mat-tab-group {
-    width: 70%;
-    min-width: 300px;
-    max-width: 900px;
-    margin-left:auto;
-    margin-right:auto;
+    width: 100%;
 }
 
 .mat-form-field {
     width: 60%;
     min-width: 250px;
     max-width: 400px;
+}
+
+.mat-card-actions {
+    width: 50%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .login-button {

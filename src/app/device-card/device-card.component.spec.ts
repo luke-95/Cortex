@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DevicesComponent } from './spaces-tabs-component.component';
+import { DeviceCardComponent } from './device-card.component';
 
-describe('SpacesTabsComponentComponent', () => {
-  let component: DevicesComponent;
-  let fixture: ComponentFixture<DevicesComponent>;
+describe('DeviceCardComponent', () => {
+  let component: DeviceCardComponent;
+  let fixture: ComponentFixture<DeviceCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DevicesComponent ]
+      declarations: [ DeviceCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DevicesComponent);
+    fixture = TestBed.createComponent(DeviceCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

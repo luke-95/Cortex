@@ -4,7 +4,7 @@
     class="sidenav"
     fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [mode]="(isHandset$ | async) ? 'push' : 'side'"
     [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">{{ app_title }}</mat-toolbar>
     <mat-nav-list>

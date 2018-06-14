@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'spaces-tabs-component',
-  templateUrl: './spaces-tabs-component.component.html',
-  styleUrls: ['./spaces-tabs-component.component.css']
+  selector: 'devices-component',
+  templateUrl: './devices.component.html',
+  styleUrls: ['./devices.component.css']
 })
 export class DevicesComponent implements OnInit {
   spaces_list = [

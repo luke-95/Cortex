@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SettingsComponent } from './settings/settings.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 import { AccountPageComponent } from './account-page/account-page.component';
-import { DevicesComponent } from './spaces-tabs-component/spaces-tabs-component.component';
+import { DevicesComponent } from './devices/devices.component';
 import { LoginComponent } from './login/login.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 

@@ -48,7 +48,12 @@ export class DashboardComponent {
 
   isSmallScreen$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
   .pipe(
-    map(result => result.matches)
+    map(result => result.matches),
+  )
+
+  maxCardWidth$: Observable<string> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
+  .pipe(
+    map(result => 'width: '.concat(result.matches ? '450px' : '150px').concat(';')),
   )
 
 }
