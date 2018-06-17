@@ -50,6 +50,8 @@ import {
   MatMenuModule,
   MatSliderModule
 } from '@angular/material';
+import { ApplianceComponent } from './device-card/appliance/appliance.component';
+import { SensorComponent } from './device-card/sensor/sensor.component';
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import {
     DeviceCardComponent,
     TempSensorComponent,
     SpeakersComponent,
+    ApplianceComponent,
+    SensorComponent,
 
   ],
   imports: [

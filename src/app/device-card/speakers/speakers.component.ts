@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/internal/operators/map';
 
 @Component({
   selector: 'device-speakers',
@@ -16,7 +19,7 @@ export class SpeakersComponent implements OnInit {
     this.mute_toggle_label = this.is_muted? "On" : " Off";
   }
 
-  constructor() { }
+  constructor(private breakpointObserver: BreakpointObserver,) { }
 
   ngOnInit() {
   }
@@ -33,4 +36,8 @@ export class SpeakersComponent implements OnInit {
     return value;
   }
 
+  isExtraSmallScreen$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.XSmall])
+  .pipe(
+    map(result => result.matches),
+  )
 }
