@@ -39,7 +39,7 @@ export class TempSensorComponent implements OnInit {
           this.lineChartLabels.push(index.toString());
 
           // push datapoint value
-          data_temperature = Math.floor((Math.random() * 60) -20);
+          data_temperature = Math.floor((Math.random() * 8) + 15);
           this.lineChartData[i].data.push(data_temperature);
         }
       }
@@ -65,7 +65,7 @@ export class TempSensorComponent implements OnInit {
     for (let i = 0; i < this.lineChartData.length; i++) {
       _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
       for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        _lineChartData[i].data[j] = Math.floor((Math.random() * 60) -20);
+        _lineChartData[i].data[j] = Math.floor((Math.random() * 10) + 16);
       }
     }
     this.lineChartData = _lineChartData;
