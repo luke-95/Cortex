@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { DeviceCardComponent } from '../device-card/device-card.component';
+import { DevicesComponent } from '../devices/devices.component';
+import { Device } from '../models/Device';
+import { DeviceType } from '../models/DeviceType';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,38 +13,8 @@ import { DeviceCardComponent } from '../device-card/device-card.component';
 })
 
 export class DashboardComponent {
+  @Input() devices: Array<Device>;
   cols = 2;
-  cards = [
-    { 
-      title: 'Thermometer', 
-      cols: 1, 
-      rows: 1 , 
-      content: ' <content> ',
-      type: 'TempSensor'
-    },
-    { 
-      title: 'Speakers', 
-      cols: 1, 
-      rows: 1 , 
-      content: ' <content> ',
-      type: 'other'
-    },
-    { 
-      title: 'TV', 
-      cols: 1, 
-      rows: 1, 
-      content: ' <content> ',
-      type: 'other'
-    },
-    { 
-      title: 'Security camera',
-       cols: 1,
-       rows: 1 , 
-       content: ' <content> ',
-       type: 'other'
-    },
-    
-  ];
 
   constructor (private breakpointObserver: BreakpointObserver,)
   {
@@ -50,7 +22,13 @@ export class DashboardComponent {
 
   ngOnInit()
   {
+    this.initDevices()
   }
+
+  initDevices()
+  {
+  }
+
 
   isSmallScreen$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
   .pipe(
@@ -62,4 +40,11 @@ export class DashboardComponent {
     map(result => 'width: '.concat(result.matches ? '450px' : '150px').concat(';')),
   )
 
+  isExtraSmallScreen$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.XSmall])
+  .pipe(
+    map(result => result.matches),
+  )
+
+
+  
 }

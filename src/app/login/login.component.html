@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  SmartHouse
+  {{ app_title }}
 </mat-toolbar>
 <mat-card class='main-login'>
   <div class='main-login-content'>
@@ -32,6 +32,7 @@
                   <button mat-stroked-button
                     matTooltip="For Demo purposes"
                     color="accent"
+                    [style.margin-bottom.px]="10"
                     (click)='skipLogin()'
                     >
                     Skip

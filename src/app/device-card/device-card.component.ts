@@ -1,4 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import '../models/DeviceType';
+import '../models/Device';
+import { DeviceType } from '../models/DeviceType';
+import { Device } from '../models/Device';
 
 @Component({
   selector: 'device-card',
@@ -8,17 +15,9 @@ import { Component, OnInit, Input } from '@angular/core';
 
 
 export class DeviceCardComponent implements OnInit {
-  @Input() name: string;
-  @Input() type:string;
-
-  private type_to_name_dict = {
-    'TempSensor' : 'Temperature sensor',
-  }
-
-  public readonly type_keys = Object.keys(this.type_to_name_dict);
-
-
-  constructor() {
+  @Input() device: Device;
+  deviceType = DeviceType;
+  constructor(private breakpointObserver: BreakpointObserver,) {
 
   }
   
@@ -29,4 +28,12 @@ export class DeviceCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  isSmallScreen$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
+  .pipe(
+    map(result => result.matches),
+  )
+
+  getTitleColor() {
+    return Device.getTypeColor(this.device.type)
+  }
 }

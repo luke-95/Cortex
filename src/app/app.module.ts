@@ -22,11 +22,13 @@ import { DevicesComponent } from './devices/devices.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AccountPageComponent } from './account-page/account-page.component';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+import { DeviceCardComponent } from './device-card/device-card.component';
+import { TempSensorComponent } from './device-card/temp-sensor/temp-sensor.component';
+import { SpeakersComponent } from './device-card/speakers/speakers.component'
 
 //Material modules
-import { MatMenuModule } from '@angular/material/menu';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { 
   MatToolbar,
   MatCardModule,
@@ -42,11 +44,12 @@ import {
   MatSlideToggleModule,
   MatSelectModule,
   MatTooltipModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatTabsModule,
+  MatMenuModule,
+  MatSliderModule
 } from '@angular/material';
-import { AuthService } from './auth.service';
-import { AuthGuard } from './auth-guard.service';
-import { DeviceCardComponent } from './device-card/device-card.component';
-import { TempSensorComponent } from './device-card/temp-sensor/temp-sensor.component';
 
 
 @NgModule({
@@ -60,6 +63,7 @@ import { TempSensorComponent } from './device-card/temp-sensor/temp-sensor.compo
     LoginComponent,
     DeviceCardComponent,
     TempSensorComponent,
+    SpeakersComponent,
 
   ],
   imports: [
@@ -95,9 +99,10 @@ import { TempSensorComponent } from './device-card/temp-sensor/temp-sensor.compo
     MatSlideToggleModule,
     MatSelectModule,
     MatTooltipModule,
+    MatChipsModule,
+    MatSliderModule,
 
     //Other Modules
-    // NgxChartsModule
     ChartsModule
   ],
   providers: [AuthGuard, AuthService],

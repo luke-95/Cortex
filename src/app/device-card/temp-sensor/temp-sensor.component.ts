@@ -7,21 +7,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TempSensorComponent implements OnInit {
   constructor() { }
-
-  ngOnInit() {
-  }
-
-   // lineChart
-   public lineChartData:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
+  // lineChart
+  public lineChartLabels:Array<any> = [];
+  public lineChartData:Array<any> = [
+    {data: [], label: 'Series B'},
   ];
-
-  public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
   public lineChartOptions:any = {
     responsive: true
   };
+
+  ngOnInit() {
+    this.initChartData();
+  }
+  
+  initChartData()
+  {
+    let index = 0;
+    let data_count = 30;
+    let data_temperature = 0;
+
+    for (let i = 0; i < this.lineChartData.length; i++)
+    {
+      this.lineChartData[i].data = Array<number>();
+      while(index < data_count)
+      {
+        index = index + 1;
+        if (index % 2 == 0)
+        {
+          //push datapoint label
+          this.lineChartLabels.push(index.toString());
+
+          // push datapoint value
+          data_temperature = Math.floor((Math.random() * 60) -20);
+          this.lineChartData[i].data.push(data_temperature);
+        }
+      }
+    }
+  }
+
 
   public lineChartColors:Array<any> = [
     { // grey
@@ -32,16 +56,8 @@ export class TempSensorComponent implements OnInit {
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
   ];
-  public lineChartLegend:boolean = true;
+  public lineChartLegend:boolean = false;
   public lineChartType:string = 'line';
  
   public randomize():void {
@@ -49,7 +65,7 @@ export class TempSensorComponent implements OnInit {
     for (let i = 0; i < this.lineChartData.length; i++) {
       _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
       for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
+        _lineChartData[i].data[j] = Math.floor((Math.random() * 60) -20);
       }
     }
     this.lineChartData = _lineChartData;

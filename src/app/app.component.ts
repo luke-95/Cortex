@@ -8,6 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppComponent {
   public isLoggedIn = false;
-  static app_title = 'SmartHouse 0.4';
+  static app_title = 'Cortex 0.7';
 
 }

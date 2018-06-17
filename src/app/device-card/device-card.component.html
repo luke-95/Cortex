@@ -1,11 +1,14 @@
-<mat-card class="device-card">
-  <mat-card-header>
-    {{ name }}
-  </mat-card-header>
-  <mat-card-content class='device-card-content' [ngSwitch]='type'>
-    <device-temp-sensor *ngSwitchCase="type_keys[0]"></device-temp-sensor>
+<ng-container [ngSwitch]='device.type' >
+  <mat-card class="device-mat-card">
+    <mat-card-header>
+        <mat-card-title [style.color]="getTitleColor()">
+          {{ device.name }}
+        </mat-card-title>
+      </mat-card-header>
+    <device-temp-sensor *ngSwitchCase="deviceType.TempSensor"></device-temp-sensor>
+    <device-speakers *ngSwitchCase="deviceType.Audio"></device-speakers>
     <div *ngSwitchDefault>
-      <h3>I am empty</h3>
+      asd
     </div>
-  </mat-card-content>
-</mat-card>
+  </mat-card>
+</ng-container>

@@ -1,0 +1,25 @@
+<mat-list style="text-align:left;margin-top:0px;height:100%;">
+  <mat-list-item>
+    <p matLine>Sleep</p>
+    <mat-slide-toggle matLine (click)="toggleMute()">{{ mute_toggle_label }}</mat-slide-toggle>
+    <p matLine>Mute</p>
+    <mat-slide-toggle (click)="toggleMute()">{{ mute_toggle_label }}</mat-slide-toggle>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine>Volume</p>
+    <mat-slider
+    thumbLabel
+    [displayWith]="formatLabel"
+    tickInterval="0"
+    min="0"
+    max="100"></mat-slider>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item style="text-align:center;">
+    <div style="margin-left:auto;margin-right:auto;margin-top:15%;padding-top:7%;">
+      <button mat-mini-fab color="accent" style="margin-left: 16px;margin-right:16px;"><mat-icon>skip_previous</mat-icon></button>
+      <button mat-mini-fab color="accent" style="margin-left: 16px;margin-right:16px;"><mat-icon>play_arrow</mat-icon></button>
+      <button mat-mini-fab color="accent" style="margin-left: 16px;margin-right:16px;"><mat-icon>skip_next</mat-icon></button>
+    </div>
+  </mat-list-item>
+</mat-list>
