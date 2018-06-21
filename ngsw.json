@@ -1,18 +1,18 @@
 {
   "configVersion": 1,
-  "index": "https://luke-95.github.io/Cortex/index.html",
+  "index": "/Cortex/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "https://luke-95.github.io/Cortex/favicon.ico",
-        "https://luke-95.github.io/Cortex/index.html",
-        "https://luke-95.github.io/Cortex/main.e09536ea7e73c31bf210.js",
-        "https://luke-95.github.io/Cortex/polyfills.e3633a42d1123afc5fc9.js",
-        "https://luke-95.github.io/Cortex/runtime.a66f828dca56eeb90e02.js",
-        "https://luke-95.github.io/Cortex/styles.a771c1e804dc1a9e4796.css"
+        "/Cortex/favicon.ico",
+        "/Cortex/index.html",
+        "/Cortex/main.5ea2e5129c4574056dc8.js",
+        "/Cortex/polyfills.e3633a42d1123afc5fc9.js",
+        "/Cortex/runtime.a66f828dca56eeb90e02.js",
+        "/Cortex/styles.a771c1e804dc1a9e4796.css"
       ],
       "patterns": [
         "https:\\/\\/fonts\\.googleapis\\.com\\/.*",
@@ -24,40 +24,40 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "https://luke-95.github.io/Cortex/assets/config.json",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-128x128.png",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-144x144.png",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-152x152.png",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-192x192.png",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-256x256.png",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-384x384.png",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-512x512.png",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-72x72.png",
-        "https://luke-95.github.io/Cortex/assets/icons/icon-96x96.png",
-        "https://luke-95.github.io/Cortex/assets/image_cache.jpg"
+        "/Cortex/assets/config.json",
+        "/Cortex/assets/icons/icon-128x128.png",
+        "/Cortex/assets/icons/icon-144x144.png",
+        "/Cortex/assets/icons/icon-152x152.png",
+        "/Cortex/assets/icons/icon-192x192.png",
+        "/Cortex/assets/icons/icon-256x256.png",
+        "/Cortex/assets/icons/icon-384x384.png",
+        "/Cortex/assets/icons/icon-512x512.png",
+        "/Cortex/assets/icons/icon-72x72.png",
+        "/Cortex/assets/icons/icon-96x96.png",
+        "/Cortex/assets/image_cache.jpg"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://luke-95.github.io/Cortex/assets/config.json": "141115c1c1a521fc4a61b81f850ad4aa229bca48",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-128x128.png": "1ef952cd943feecb7ba890515bf2218b565f9bfb",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-144x144.png": "f99d1b3f69d7061d28b825c0522e791c1cfc07d7",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-152x152.png": "386843d0a3ed03104d46b5a6507da5eac134223f",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-192x192.png": "f2b1cc0aba325509c81fb82bb9a2bcac35f16813",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-256x256.png": "e7e2344085646bac00b46f3130217e587a770fcd",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-384x384.png": "69882def44b7748a96fc6e9fb6b5474400869179",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-512x512.png": "68de963447ee7ac7d7d3eb442bcde9a4fb727d71",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-72x72.png": "7899911f0c1a5b3d1ea14cf8fc99b7bcc1631f29",
-    "https://luke-95.github.io/Cortex/assets/icons/icon-96x96.png": "670f567a5aa6fb57ad6a573de0d389267cf5a81d",
-    "https://luke-95.github.io/Cortex/assets/image_cache.jpg": "cdda449dae9334c0b84bb829ef736f8ac8ea0516",
-    "https://luke-95.github.io/Cortex/favicon.ico": "2c864039ab47dec0735edb28cfe10f5cbc55afdb",
-    "https://luke-95.github.io/Cortex/index.html": "7ed169477c15142773ae804a373270cd3fcdb1a4",
-    "https://luke-95.github.io/Cortex/main.e09536ea7e73c31bf210.js": "b707fec22493c3d347d0704c5dca872f82e485a0",
-    "https://luke-95.github.io/Cortex/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
-    "https://luke-95.github.io/Cortex/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
-    "https://luke-95.github.io/Cortex/styles.a771c1e804dc1a9e4796.css": "1f4f7c4dd14c25fca981459411d7397c63fcc37e"
+    "/Cortex/assets/config.json": "141115c1c1a521fc4a61b81f850ad4aa229bca48",
+    "/Cortex/assets/icons/icon-128x128.png": "1ef952cd943feecb7ba890515bf2218b565f9bfb",
+    "/Cortex/assets/icons/icon-144x144.png": "f99d1b3f69d7061d28b825c0522e791c1cfc07d7",
+    "/Cortex/assets/icons/icon-152x152.png": "386843d0a3ed03104d46b5a6507da5eac134223f",
+    "/Cortex/assets/icons/icon-192x192.png": "f2b1cc0aba325509c81fb82bb9a2bcac35f16813",
+    "/Cortex/assets/icons/icon-256x256.png": "e7e2344085646bac00b46f3130217e587a770fcd",
+    "/Cortex/assets/icons/icon-384x384.png": "69882def44b7748a96fc6e9fb6b5474400869179",
+    "/Cortex/assets/icons/icon-512x512.png": "68de963447ee7ac7d7d3eb442bcde9a4fb727d71",
+    "/Cortex/assets/icons/icon-72x72.png": "7899911f0c1a5b3d1ea14cf8fc99b7bcc1631f29",
+    "/Cortex/assets/icons/icon-96x96.png": "670f567a5aa6fb57ad6a573de0d389267cf5a81d",
+    "/Cortex/assets/image_cache.jpg": "cdda449dae9334c0b84bb829ef736f8ac8ea0516",
+    "/Cortex/favicon.ico": "2c864039ab47dec0735edb28cfe10f5cbc55afdb",
+    "/Cortex/index.html": "509a747b1e3616b3a1982006561f4f88343f1c63",
+    "/Cortex/main.5ea2e5129c4574056dc8.js": "a051161548d089f92aac27bc74d1396d0b79e53b",
+    "/Cortex/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
+    "/Cortex/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
+    "/Cortex/styles.a771c1e804dc1a9e4796.css": "1f4f7c4dd14c25fca981459411d7397c63fcc37e"
   },
   "navigationUrls": [
     {
