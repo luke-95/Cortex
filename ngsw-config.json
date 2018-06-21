@@ -12,7 +12,13 @@
         "/index.html",
         "/*.css",
         "/*.js"
+      ],
+      "urls" : [
+        "https://fonts.googleapis.com/**",
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+
       ]
+
     }
   }, {
     "name": "assets",

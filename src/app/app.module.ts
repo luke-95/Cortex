@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 //Third-party modules
 // import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ChartsModule } from 'ng2-charts';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 // Project modules
 import { AppRoutingModule } from './app-routing.module';
@@ -76,7 +76,10 @@ import { SensorComponent } from './device-card/sensor/sensor.component';
     BrowserAnimationsModule,
     LayoutModule,
     HttpClientModule,
-    
+    ServiceWorkerModule.register('/ngsw-worker.js', {
+      enabled: true
+    }),
+
     // Custom Modules
     NavBarModule,
 
