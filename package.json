@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/pwa": "^0.7.0-rc.0",
     "@angular/router": "^6.0.3",
-    "@angular/service-worker": "^6.0.3",
+    "@angular/service-worker": "^6.0.6",
     "@ng-bootstrap/ng-bootstrap": "^2.1.1",
     "@progress/kendo-angular-buttons": "^4.1.1",
     "@progress/kendo-angular-l10n": "^1.2.0",
