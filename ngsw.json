@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "index": "https://luke-95.github.io/Cortex/login",
+  "index": "https://luke-95.github.io/Cortex/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -60,18 +60,6 @@
     {
       "positive": true,
       "regex": "^\\/.*$"
-    },
-    {
-      "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
-    },
-    {
-      "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
-    },
-    {
-      "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
     }
   ]
 }
