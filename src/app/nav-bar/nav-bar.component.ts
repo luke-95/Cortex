@@ -79,6 +79,11 @@ export class NavBarComponent {
   .pipe(
     map(result => result.matches)
   );
+
+  isExtraSmallScreen$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.XSmall])
+  .pipe(
+    map(result => result.matches),
+  )
 }
 
 

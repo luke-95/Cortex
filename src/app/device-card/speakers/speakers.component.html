@@ -1,4 +1,4 @@
-<div class="container align-left">
+<div class="container align-items-start flex-column">
   <div class="row">
     <div class="col-3 my-auto" style="text-align:left">
       <span><b>Now Playing:</b></span>
@@ -15,7 +15,7 @@
       <mat-slide-toggle (click)="toggleMute()" >{{ mute_toggle_label }}</mat-slide-toggle>
     </div>
   </div>
-  <div class="row">
+  <div class="row" style="padding-top: 8px">
     <div class="col-1 my-auto">
       <span>Volume</span>
     </div>
@@ -28,29 +28,28 @@
       max="100"></mat-slider>
     </div>
   </div>
-  <div class="spacer"></div>
-  <div class="row">
-        <ng-container *ngIf="(isExtraSmallScreen$ | async)">
-          <div class="col">
-            <button mat-mini-fab color="accent"><mat-icon>skip_previous</mat-icon></button>
-          </div>
-          <div class="col">
-            <button mat-mini-fab color="accent"><mat-icon>play_arrow</mat-icon></button>
-          </div>
-          <div class="col">
-            <button mat-mini-fab color="accent"><mat-icon>skip_next</mat-icon></button>
-          </div>
-        </ng-container>
-        <ng-container *ngIf="!(isExtraSmallScreen$ | async)">
-          <div class="col">
-            <button mat-fab color="accent"><mat-icon>skip_previous</mat-icon></button>
-          </div>
-          <div class="col">
-            <button mat-fab color="accent"><mat-icon>play_arrow</mat-icon></button>
-          </div>
-          <div class="col">
-            <button mat-fab color="accent"><mat-icon>skip_next</mat-icon></button>
-          </div>
-        </ng-container>
-  </div>
+    <div class="row flex-fill align-items-end justify-content-around">
+          <ng-container *ngIf="(isExtraSmallScreen$ | async)">
+            <div class="col">
+              <button mat-mini-fab color="accent"><mat-icon>skip_previous</mat-icon></button>
+            </div>
+            <div class="col">
+              <button mat-mini-fab color="accent"><mat-icon>play_arrow</mat-icon></button>
+            </div>
+            <div class="col">
+              <button mat-mini-fab color="accent"><mat-icon>skip_next</mat-icon></button>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!(isExtraSmallScreen$ | async)">
+            <div class="col">
+              <button mat-fab color="accent"><mat-icon>skip_previous</mat-icon></button>
+            </div>
+            <div class="col">
+              <button mat-fab color="accent"><mat-icon>play_arrow</mat-icon></button>
+            </div>
+            <div class="col">
+              <button mat-fab color="accent"><mat-icon>skip_next</mat-icon></button>
+            </div>
+          </ng-container>
+    </div>
 </div>

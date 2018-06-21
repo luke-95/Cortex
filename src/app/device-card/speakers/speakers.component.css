@@ -3,8 +3,8 @@
 }
 
 .button {
-    margin-left:8px;
-    margin-right:8px;
+    /* margin-left:8px;
+    margin-right:8px; */
 }
 
 .mat-icon {
@@ -14,12 +14,4 @@
     margin-left:-3px;
     /* margin-left:auto; */
     margin-right:auto;
-}
-
-.row:last-child {
-    background-color:white;
-    position: absolute;
-    bottom: 16px;
-    width:96%;
-    min-width:210px;
 }
