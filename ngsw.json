@@ -1,18 +1,18 @@
 {
   "configVersion": 1,
-  "index": "https://luke-95.github.io/SmartHouse/index.html",
+  "index": "https://luke-95.github.io/Cortex/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "https://luke-95.github.io/SmartHouse/favicon.ico",
-        "https://luke-95.github.io/SmartHouse/index.html",
-        "https://luke-95.github.io/SmartHouse/main.286a8c1f698d79fb4512.js",
-        "https://luke-95.github.io/SmartHouse/polyfills.e3633a42d1123afc5fc9.js",
-        "https://luke-95.github.io/SmartHouse/runtime.a66f828dca56eeb90e02.js",
-        "https://luke-95.github.io/SmartHouse/styles.a771c1e804dc1a9e4796.css"
+        "https://luke-95.github.io/Cortex/favicon.ico",
+        "https://luke-95.github.io/Cortex/index.html",
+        "https://luke-95.github.io/Cortex/main.b4954d6f6a86cdf32e27.js",
+        "https://luke-95.github.io/Cortex/polyfills.e3633a42d1123afc5fc9.js",
+        "https://luke-95.github.io/Cortex/runtime.a66f828dca56eeb90e02.js",
+        "https://luke-95.github.io/Cortex/styles.a771c1e804dc1a9e4796.css"
       ],
       "patterns": []
     },
@@ -21,38 +21,38 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "https://luke-95.github.io/SmartHouse/assets/config.json",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-128x128.png",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-144x144.png",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-152x152.png",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-192x192.png",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-256x256.png",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-384x384.png",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-512x512.png",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-72x72.png",
-        "https://luke-95.github.io/SmartHouse/assets/icons/icon-96x96.png"
+        "https://luke-95.github.io/Cortex/assets/config.json",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-128x128.png",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-144x144.png",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-152x152.png",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-192x192.png",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-256x256.png",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-384x384.png",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-512x512.png",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-72x72.png",
+        "https://luke-95.github.io/Cortex/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://luke-95.github.io/SmartHouse/assets/config.json": "141115c1c1a521fc4a61b81f850ad4aa229bca48",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-128x128.png": "1ef952cd943feecb7ba890515bf2218b565f9bfb",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-144x144.png": "f99d1b3f69d7061d28b825c0522e791c1cfc07d7",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-152x152.png": "386843d0a3ed03104d46b5a6507da5eac134223f",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-192x192.png": "f2b1cc0aba325509c81fb82bb9a2bcac35f16813",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-256x256.png": "e7e2344085646bac00b46f3130217e587a770fcd",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-384x384.png": "69882def44b7748a96fc6e9fb6b5474400869179",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-512x512.png": "68de963447ee7ac7d7d3eb442bcde9a4fb727d71",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-72x72.png": "7899911f0c1a5b3d1ea14cf8fc99b7bcc1631f29",
-    "https://luke-95.github.io/SmartHouse/assets/icons/icon-96x96.png": "670f567a5aa6fb57ad6a573de0d389267cf5a81d",
-    "https://luke-95.github.io/SmartHouse/favicon.ico": "2c864039ab47dec0735edb28cfe10f5cbc55afdb",
-    "https://luke-95.github.io/SmartHouse/index.html": "de66ec5ed74829e965d119d8e43480b6b33dea8a",
-    "https://luke-95.github.io/SmartHouse/main.286a8c1f698d79fb4512.js": "01b4becd8ee7f65c1b8bda70f77c2392e7ac469a",
-    "https://luke-95.github.io/SmartHouse/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
-    "https://luke-95.github.io/SmartHouse/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
-    "https://luke-95.github.io/SmartHouse/styles.a771c1e804dc1a9e4796.css": "1f4f7c4dd14c25fca981459411d7397c63fcc37e"
+    "https://luke-95.github.io/Cortex/assets/config.json": "141115c1c1a521fc4a61b81f850ad4aa229bca48",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-128x128.png": "1ef952cd943feecb7ba890515bf2218b565f9bfb",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-144x144.png": "f99d1b3f69d7061d28b825c0522e791c1cfc07d7",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-152x152.png": "386843d0a3ed03104d46b5a6507da5eac134223f",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-192x192.png": "f2b1cc0aba325509c81fb82bb9a2bcac35f16813",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-256x256.png": "e7e2344085646bac00b46f3130217e587a770fcd",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-384x384.png": "69882def44b7748a96fc6e9fb6b5474400869179",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-512x512.png": "68de963447ee7ac7d7d3eb442bcde9a4fb727d71",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-72x72.png": "7899911f0c1a5b3d1ea14cf8fc99b7bcc1631f29",
+    "https://luke-95.github.io/Cortex/assets/icons/icon-96x96.png": "670f567a5aa6fb57ad6a573de0d389267cf5a81d",
+    "https://luke-95.github.io/Cortex/favicon.ico": "2c864039ab47dec0735edb28cfe10f5cbc55afdb",
+    "https://luke-95.github.io/Cortex/index.html": "9ef6c75975fa0783b76f9d1ed4f61786760c91be",
+    "https://luke-95.github.io/Cortex/main.b4954d6f6a86cdf32e27.js": "4c51b65b321512ada3aa82ff7b1d7d4b669090d4",
+    "https://luke-95.github.io/Cortex/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
+    "https://luke-95.github.io/Cortex/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
+    "https://luke-95.github.io/Cortex/styles.a771c1e804dc1a9e4796.css": "1f4f7c4dd14c25fca981459411d7397c63fcc37e"
   },
   "navigationUrls": [
     {
