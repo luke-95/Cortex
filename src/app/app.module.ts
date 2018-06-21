@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Router} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -107,7 +108,8 @@ import { SensorComponent } from './device-card/sensor/sensor.component';
     MatSliderModule,
 
     //Other Modules
-    ChartsModule
+    ChartsModule,
+    NgbModule.forRoot(),
   ],
   providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 <div class="grid-container" [style.margin-top.px]="( isExtraSmallScreen$ | async ) ? 100 : 60">
-  <mat-grid-list style="width:100%;" [cols]="(isSmallScreen$ | async) ? 1 : 2" cols="2" rowHeight="3:2">
+  <mat-grid-list style="width:100%;" [cols]="(isSmallScreen$ | async) ? 1 : 2" cols="2" [rowHeight]="( isExtraSmallScreen$ | async ) ? '1:1' : '4:3'">
     
     <ng-container *ngFor="let device of devices" [style.background-color]="'blue'">
       <mat-grid-tile>
@@ -10,7 +10,6 @@
         </div>
       </mat-grid-tile>
     </ng-container>
-
 
     <!-- <button mat-raised-button color='warn' (click)='popCard()'>
       Pop card

@@ -40,4 +40,9 @@ export class SpeakersComponent implements OnInit {
   .pipe(
     map(result => result.matches),
   )
+
+  isSmallScreen$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
+  .pipe(
+    map(result => result.matches),
+  )
 }

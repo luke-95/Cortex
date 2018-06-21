@@ -44,7 +44,4 @@ export class DashboardComponent {
   .pipe(
     map(result => result.matches),
   )
-
-
-  
 }

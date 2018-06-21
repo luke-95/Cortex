@@ -8,7 +8,7 @@ import { Device } from '../models/Device';
   styleUrls: ['./devices.component.css']
 })
 export class DevicesComponent implements OnInit {
-  spaces_list = [
+  public spaces_list = [
     {
       title: 'Favorites',
       content: '<app-dashboard></app-dashboard>',
@@ -32,6 +32,7 @@ export class DevicesComponent implements OnInit {
   ]
 
   public devices:Array<Device> = [];
+  public active_filters:Array<DeviceType> = [];
   
   constructor() { }
 

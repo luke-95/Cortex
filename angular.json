@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SmartHouse": {
+    "Cortex": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/SmartHouse",
+            "outputPath": "dist/Cortex",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "SmartHouse:build"
+            "browserTarget": "Cortex:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "SmartHouse:build:production"
+              "browserTarget": "Cortex:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SmartHouse:build"
+            "browserTarget": "Cortex:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "SmartHouse-e2e": {
+    "Cortex-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "SmartHouse:serve"
+            "devServerTarget": "Cortex:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "SmartHouse:serve:production"
+              "devServerTarget": "Cortex:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "SmartHouse"
+  "defaultProject": "Cortex"
 }
