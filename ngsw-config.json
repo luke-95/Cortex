@@ -1,5 +1,8 @@
 {
-  "index": "/login",
+  "index": "/index.html",
+  "navigationUrls": [
+    "/**"
+  ],
   "assetGroups": [{
     "name": "app",
     "installMode": "prefetch",
