@@ -9,3 +9,7 @@
 .custom-chip {
   color:white;
 }
+
+.devices {
+  min-width: 375px;
+}
