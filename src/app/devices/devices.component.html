@@ -1,4 +1,4 @@
-<mat-card class="devices container" style="padding: 0px 0px 0px 0px;margin: 0px 0px 0px 0px;">
+<mat-card class="devices container-fluid" style="padding: 0px 0px 0px 0px;margin: 0px 0px 0px 0px;">
   <mat-card-content >
       <mat-chip-list  class='chips-filters'>
         <mat-chip class='custom-chip' [selectable]="'true'" *ngFor="let device of devices" [style.background-color]="getColorForType(device.type)">{{ device.type.toString() }}</mat-chip>
@@ -8,9 +8,7 @@
       <mat-tab-group style="margin-left:5px">
         <mat-tab *ngFor="let my_space of spaces_list" label={{my_space.title}}>
           <ng-template matTabContent>
-            <div class="container-fluid">
-              <app-dashboard [title]="my_space.title" [devices]="devices"></app-dashboard>
-            </div>
+            <app-dashboard [title]="my_space.title" [devices]="devices"></app-dashboard>
           </ng-template>
         </mat-tab>
         <mat-tab label="Add" style='width:20px' isAttached='false'>
