@@ -1,15 +1,19 @@
 .main-login {
     text-align:center;
-    min-height: 400px;
+    /* min-height: 400px; */
     min-width: 300px;
     
     padding-bottom: 20px;
     margin-bottom: 0px;
 }
 
+.mat-toolbar {
+    min-width: 300px;
+}
+
 .main-login-content {
     text-align:center;
-    width:80%;
+    width:100%;
     max-width:650px;
     min-width:300px;
     margin-left:auto;
@@ -31,8 +35,8 @@
 }
 
 .mat-form-field {
-    width: 60%;
-    min-width: 250px;
+    width: 65%;
+    min-width: 270px;
     max-width: 400px;
 }
 
