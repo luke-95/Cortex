@@ -12,7 +12,7 @@
         "/Cortex/main.89fdfcee17448cb026d2.js",
         "/Cortex/polyfills.e3633a42d1123afc5fc9.js",
         "/Cortex/runtime.a66f828dca56eeb90e02.js",
-        "/Cortex/styles.a771c1e804dc1a9e4796.css"
+        "/Cortex/styles.d8b1df9d14c27c35ff51.css"
       ],
       "patterns": [
         "https:\\/\\/fonts\\.googleapis\\.com\\/.*",
@@ -55,11 +55,11 @@
     "/Cortex/assets/icons/icon-96x96.png": "670f567a5aa6fb57ad6a573de0d389267cf5a81d",
     "/Cortex/assets/image_cache.jpg": "cdda449dae9334c0b84bb829ef736f8ac8ea0516",
     "/Cortex/favicon.ico": "2c864039ab47dec0735edb28cfe10f5cbc55afdb",
-    "/Cortex/index.html": "1c68775fb2a18ff535e3a6b87b3c376642163882",
+    "/Cortex/index.html": "6572e3917c7c163142a979821953ef41d87fcbd4",
     "/Cortex/main.89fdfcee17448cb026d2.js": "c18bd6f17a74666fc08d7bff5e797c50335caa86",
     "/Cortex/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
     "/Cortex/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
-    "/Cortex/styles.a771c1e804dc1a9e4796.css": "1f4f7c4dd14c25fca981459411d7397c63fcc37e"
+    "/Cortex/styles.d8b1df9d14c27c35ff51.css": "33a31fed85e8b6e41c5df85caef036b7c11b4343"
   },
   "navigationUrls": [
     {
