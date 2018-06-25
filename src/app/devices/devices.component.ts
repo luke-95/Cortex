@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DeviceType } from '../models/DeviceType';
 import { Device } from '../models/Device';
+import { DevicesService } from 'src/app/services/devices-service/devices.service';
 
 @Component({
   selector: 'devices-component',
@@ -31,28 +31,32 @@ export class DevicesComponent implements OnInit {
     },
   ]
 
-  public devices:Array<Device> = [];
-  public active_filters:Array<DeviceType> = [];
+  public devices: Array<Device>;
   
-  constructor() { }
+  constructor( private _devicesService: DevicesService) { }
 
   ngOnInit() {
     this.initDevices();
-    console.log(this.devices);
   }
 
   initDevices()
   {
-    this.devices.push(new Device("Bluetooth Speakers", DeviceType.Audio));
-    this.devices.push(new Device("Backyard Movement Sensor", DeviceType.Sensor));
-    this.devices.push(new Device("Outdoors thermometer", DeviceType.TempSensor));
-    this.devices.push(new Device("Coffee-maker", DeviceType.Appliance));
-    this.devices.push(new Device("AV-Receiver", DeviceType.Video));
-    this.devices.push(new Device("Backyard Camera", DeviceType.Security));
+
+    this._devicesService.getDevices()
+      .subscribe(data => {
+        this.devices = data;
+      });
+    
+    // this.devices.push(new Device("Bluetooth Speakers", DeviceType.Audio));
+    // this.devices.push(new Device("Backyard Movement Sensor", DeviceType.Sensor));
+    // this.devices.push(new Device("Outdoors thermometer", DeviceType.TempSensor));
+    // this.devices.push(new Device("Coffee-maker", DeviceType.Appliance));
+    // this.devices.push(new Device("AV-Receiver", DeviceType.Video));
+    // this.devices.push(new Device("Backyard Camera", DeviceType.Security));
   }
 
-  getColorForType(type:DeviceType)
+  getColorForType(Type)
   {
-    return Device.getTypeColor(type);
+    return Device.getTypeColor(Device.stringToDeviceType(Type));
   }
 }

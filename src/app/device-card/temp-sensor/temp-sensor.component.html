@@ -1,5 +1,8 @@
-<div style='display:block;margin-top:0px;height:85%;width:95%;margin-left:auto;margin-right:auto;'>
-  <div style="height:85%;width:90%;margin-top:16px;margin-left:auto;margin-right:auto;">
+<div style='display:block;margin-top:0px;height:95%;width:90%;margin-left:auto;margin-right:auto;'>
+  <div class="row">
+    <h3><b>June</b> temperatures</h3>
+  </div>
+  <div style="height:90%;width:100%;margin-top:16px;margin-left:auto;margin-right:auto;">
     <canvas 
       baseChart
       [datasets]="lineChartData"
@@ -12,5 +15,5 @@
       (chartClick)="chartClicked($event)">
     </canvas>
   </div>
-  <button mat-button color='primary' (click)="randomize()" style="height: 35px;margin-top:-16px;">Randomize</button>
+  <!-- <button mat-button color='primary' (click)="randomize()" style="height: 35px;margin-top:-16px;">Randomize</button> -->
 </div>

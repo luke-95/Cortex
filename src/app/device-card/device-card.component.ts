@@ -34,6 +34,7 @@ export class DeviceCardComponent implements OnInit {
   )
 
   getTitleColor() {
-    return Device.getTypeColor(this.device.type)
+    // return "red"
+    return Device.getTypeColor(Device.stringToDeviceType(this.device.Type));
   }
 }

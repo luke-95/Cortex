@@ -1,12 +1,13 @@
-<ng-container [ngSwitch]='device.type' >
+<ng-container [ngSwitch]='device.Type' >
   <mat-card class="device-mat-card">
     <mat-card-header>
         <mat-card-title [style.color]="getTitleColor()">
-          {{ device.name }}
+          {{ device.Name }}
         </mat-card-title>
       </mat-card-header>
     <device-temp-sensor *ngSwitchCase="deviceType.TempSensor"></device-temp-sensor>
     <device-speakers *ngSwitchCase="deviceType.Audio"></device-speakers>
+    <tv-card *ngSwitchCase="deviceType.Video"></tv-card>
     <div *ngSwitchDefault>
       asd
     </div>

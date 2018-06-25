@@ -4,5 +4,6 @@ export enum DeviceType {
     Video = "Video",
     Security = "Security", 
     Sensor = "Sensor",
-    Appliance = "Appliance"
+    Appliance = "Appliance",
+    Other = "Other"
 }

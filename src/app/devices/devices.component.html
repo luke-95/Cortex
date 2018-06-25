@@ -1,7 +1,7 @@
 <mat-card class="devices container-fluid" style="padding: 0px 0px 0px 0px;margin: 0px 0px 0px 0px;">
   <mat-card-content >
       <mat-chip-list  class='chips-filters'>
-        <mat-chip class='custom-chip' [selectable]="'true'" *ngFor="let device of devices" [style.background-color]="getColorForType(device.type)">{{ device.type.toString() }}</mat-chip>
+        <mat-chip class='custom-chip' [selectable]="'true'" *ngFor="let device of devices" [style.background-color]="getColorForType(device.Type)">{{ device.Type }}</mat-chip>
         <mat-chip style="background-color: rgba(220, 220, 220, 0.3)">Clear All<mat-icon matChipRemove>cancel</mat-icon></mat-chip>
       </mat-chip-list>
 

@@ -1,5 +1,5 @@
 <div class="grid-container" [style.margin-top.px]="( isExtraSmallScreen$ | async ) ? 120 : 80">
-  <mat-grid-list style="width:100%;" [cols]="(isSmallScreen$ | async) ? 1 : 2" cols="2" [rowHeight]="( isExtraSmallScreen$ | async ) ? '1:1' : '4:3.5'">
+  <mat-grid-list style="width:100%;" [cols]="(isSmallScreen$ | async) ? 1 : 2" cols="2" [rowHeight]="( isExtraSmallScreen$ | async ) ? '4:3.3' : '4:3.5'">
     
     <ng-container *ngFor="let device of devices" [style.background-color]="'blue'">
       <mat-grid-tile>

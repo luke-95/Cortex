@@ -2,9 +2,8 @@ import { Component, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { DevicesComponent } from '../devices/devices.component';
 import { Device } from '../models/Device';
-import { DeviceType } from '../models/DeviceType';
+import { DashboardService } from '../services/dashboard-service/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,8 +15,9 @@ export class DashboardComponent {
   @Input() devices: Array<Device>;
   cols = 2;
 
-  constructor (private breakpointObserver: BreakpointObserver,)
+  constructor (private breakpointObserver: BreakpointObserver, private _dashboardService: DashboardService)
   {
+
   }
 
   ngOnInit()

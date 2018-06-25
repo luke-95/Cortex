@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Router} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 //Third-party modules
@@ -17,20 +16,6 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarModule } from './nav-bar/nav-bar.module';
 
-// Project components
-import { AppComponent } from './app.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettingsComponent } from './settings/settings.component';
-import { DevicesComponent } from './devices/devices.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AccountPageComponent } from './account-page/account-page.component';
-import { LoginComponent } from './login/login.component';
-import { AuthService } from './auth.service';
-import { AuthGuard } from './auth-guard.service';
-import { DeviceCardComponent } from './device-card/device-card.component';
-import { TempSensorComponent } from './device-card/temp-sensor/temp-sensor.component';
-import { SpeakersComponent } from './device-card/speakers/speakers.component'
 
 //Material modules
 import { 
@@ -54,8 +39,23 @@ import {
   MatMenuModule,
   MatSliderModule
 } from '@angular/material';
+
+// Project components
+import { AppComponent } from './app.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SettingsComponent } from './settings/settings.component';
+import { DevicesComponent } from './devices/devices.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AccountPageComponent } from './account-page/account-page.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+import { DeviceCardComponent } from './device-card/device-card.component';
+import { TempSensorComponent } from './device-card/temp-sensor/temp-sensor.component';
+import { SpeakersComponent } from './device-card/speakers/speakers.component'
 import { ApplianceComponent } from './device-card/appliance/appliance.component';
-import { SensorComponent } from './device-card/sensor/sensor.component';
+import { TvCardComponent } from './device-card/tv-card/tv-card.component';
 
 
 @NgModule({
@@ -71,7 +71,7 @@ import { SensorComponent } from './device-card/sensor/sensor.component';
     TempSensorComponent,
     SpeakersComponent,
     ApplianceComponent,
-    SensorComponent,
+    TvCardComponent,
 
   ],
   imports: [
@@ -115,8 +115,18 @@ import { SensorComponent } from './device-card/sensor/sensor.component';
     ChartsModule,
     NgbModule.forRoot(),
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [
+    AuthGuard, 
+    AuthService,
+    { 
+      provide: 'BASE_URL', useFactory: getBaseUrl 
+    }
+  ],
   bootstrap: [AppComponent]
 })
 
 export class AppModule { }
+
+export function getBaseUrl() {
+  return "http://cortex.azurewebsites.net/api/v1/"
+}

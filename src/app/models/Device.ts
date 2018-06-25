@@ -1,13 +1,17 @@
 import { DeviceType } from "./DeviceType";
 
-export class Device {    
-    name: string;
-    type: DeviceType;
-    color: string;
+export class Device {
+    Id: number;
+    Name: string;    
+    Type: string;
+    IsOnline: boolean;
+    AudioDevice: Object;
+    // color: string;
 
-    constructor(name:string, type:DeviceType) {
-        this.name = name;
-        this.type = type;
+    constructor(Id:number, Name:string, Type:string) {
+        this.Id = Id;
+        this.Name = Name;
+        this.Type = Type;
     }
     
     public static getTypeColor(type:DeviceType) {
@@ -39,5 +43,35 @@ export class Device {
             }
         }
         return color;
+    }
+
+    public static stringToDeviceType(Type:string) {
+        let deviceType:DeviceType;
+        switch(Type) {
+            case "Audio": {
+                deviceType = DeviceType.Audio;
+                break;
+            }
+            case "Video": {
+                deviceType = DeviceType.Video;
+                break;
+            }
+            case "Security": {
+                deviceType = DeviceType.Security;
+                break;
+            }
+            case "Sensor": {
+                deviceType = DeviceType.Sensor;
+                break;
+            }
+            case "Appliance": {
+                deviceType = DeviceType.Appliance;
+                break;
+            }
+            default: {
+                deviceType = DeviceType.Other;
+            }
+        }
+        return deviceType;
     }
 }

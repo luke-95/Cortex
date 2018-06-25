@@ -1,0 +1,39 @@
+<div class="d-flex align-content-around flex-column" style="padding:8px; height:85%">
+    <div class="row d-flex">
+      <div class="col-3 mr-auto" style="text-align:left">
+        <span><b>Current Channel:</b></span>
+      </div>
+      <div class="col" style="text-align: right;font-weight: 500">
+        <span>Antena 1</span>
+      </div>
+    </div>
+    <div class="row d-flex" style="margin-top:16px">
+      <div class="col-3 mr-auto" style="text-align:left">
+        <span>Now Showing:</span>
+      </div>
+      <div class="col" style="text-align: right;font-weight: 500">
+        <span>Master Chef</span>
+      </div>
+    </div>
+
+    <div class="row" style="padding-top: 8px">
+      <div class="col-1 my-auto">
+        <span>Volume</span>
+      </div>
+      <div class="col" style="text-align: right">
+        <mat-slider
+        thumbLabel 
+        [displayWith]="formatVolumeLabel"
+        tickInterval="0"
+        min="0"
+        max="100"></mat-slider>
+      </div>
+    </div>
+
+    <div class="row mt-auto d-flex align-items-start">
+      <div class="col d-flex justify-content-around">
+        <button mat-raised-button color="primary">View Guide</button>
+        <button mat-raised-button color="primary">Open Livestream</button>
+      </div>
+    </div>
+</div>
