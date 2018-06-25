@@ -128,5 +128,5 @@ import { TvCardComponent } from './device-card/tv-card/tv-card.component';
 export class AppModule { }
 
 export function getBaseUrl() {
-  return "http://cortex.azurewebsites.net/api/v1/"
+  return "https://cortex.azurewebsites.net/api/v1/"
 }
