@@ -9,10 +9,10 @@
       "urls": [
         "/Cortex/favicon.ico",
         "/Cortex/index.html",
-        "/Cortex/main.89fdfcee17448cb026d2.js",
+        "/Cortex/main.1239249f9c19912ee867.js",
         "/Cortex/polyfills.e3633a42d1123afc5fc9.js",
         "/Cortex/runtime.a66f828dca56eeb90e02.js",
-        "/Cortex/styles.d8b1df9d14c27c35ff51.css"
+        "/Cortex/styles.effa828f85d08e4101d7.css"
       ],
       "patterns": [
         "https:\\/\\/fonts\\.googleapis\\.com\\/.*",
@@ -40,7 +40,19 @@
       "patterns": []
     }
   ],
-  "dataGroups": [],
+  "dataGroups": [
+    {
+      "name": "api-devices",
+      "patterns": [
+        "https:\\/\\/cortex\\.azurewebsites\\.net\\/api\\/v1\\/Devices\\/"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 86400000,
+      "timeoutMs": 10000,
+      "version": 1
+    }
+  ],
   "hashTable": {
     "/Cortex/assets/backgrounds/speaker.svg": "9e57305a0593b4cff93671b8d10f82e82fb0c1cc",
     "/Cortex/assets/config.json": "141115c1c1a521fc4a61b81f850ad4aa229bca48",
@@ -55,11 +67,11 @@
     "/Cortex/assets/icons/icon-96x96.png": "670f567a5aa6fb57ad6a573de0d389267cf5a81d",
     "/Cortex/assets/image_cache.jpg": "cdda449dae9334c0b84bb829ef736f8ac8ea0516",
     "/Cortex/favicon.ico": "2c864039ab47dec0735edb28cfe10f5cbc55afdb",
-    "/Cortex/index.html": "6572e3917c7c163142a979821953ef41d87fcbd4",
-    "/Cortex/main.89fdfcee17448cb026d2.js": "c18bd6f17a74666fc08d7bff5e797c50335caa86",
+    "/Cortex/index.html": "d6bc2f693e02ac501b4d7b43b4604ac41e85abfb",
+    "/Cortex/main.1239249f9c19912ee867.js": "c983ace53d16242a8a653ca1f87c12c93052c64c",
     "/Cortex/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
     "/Cortex/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
-    "/Cortex/styles.d8b1df9d14c27c35ff51.css": "33a31fed85e8b6e41c5df85caef036b7c11b4343"
+    "/Cortex/styles.effa828f85d08e4101d7.css": "33060568c12dcfc602f3049fc62d23206521b9da"
   },
   "navigationUrls": [
     {
