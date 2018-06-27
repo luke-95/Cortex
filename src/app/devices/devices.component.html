@@ -6,14 +6,14 @@
       </mat-chip-list>
 
       <mat-tab-group 
-      [selectedIndex]="selected.value" 
-      (selectedIndexChange)="tabChanged($event)"
-      style="margin-left:5px">
-      <ng-container *ngIf="categories.length < 1">
-        <mat-tab label="All">
+        [selectedIndex]="selected.value" 
+        style="margin-left:5px">
+        <ng-container *ngIf="categories.length < 1">
+          <mat-tab label="All">
+            <!-- Placeholder tab -->
+          </mat-tab>
+        </ng-container>
 
-        </mat-tab>
-      </ng-container>
         <mat-tab *ngFor="let category of categories" label={{category.name}}>
           <ng-template matTabContent>
             <app-dashboard [title]="category.name" [devices]="category.devices"></app-dashboard>
