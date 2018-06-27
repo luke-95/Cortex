@@ -40,7 +40,7 @@ export class DashboardComponent {
 
   addDevice() {
     let dialogRef = this.dialog.open(AddDeviceDialogComponent, {
-      height: '580px',
+      height: '600px',
       width: '500px',
       panelClass: 'slim-padding-dialogue'
     });

@@ -35,7 +35,7 @@
         "https://cortex.azurewebsites.net/api/v1/Devices/"
       ],
       "cacheConfig": {
-        "maxSize": 1024,
+        "maxSize": 10,
         "maxAge": "24h",
         "timeout": "10s",
         "strategy": "freshness"
