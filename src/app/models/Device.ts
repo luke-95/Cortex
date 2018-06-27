@@ -1,11 +1,11 @@
 import { DeviceType } from "./DeviceType";
 
 export class Device {
-    Id: number;
-    Name: string;    
-    Type: string;
-    IsOnline: boolean;
-    AudioDevice: Object;
+    public Id: number;
+    public Name: string;    
+    public Type: string;
+    public IsOnline: boolean;
+    public AudioDevice: Object;
     // color: string;
 
     constructor(Id:number, Name:string, Type:string) {

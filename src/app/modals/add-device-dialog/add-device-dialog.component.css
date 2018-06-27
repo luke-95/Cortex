@@ -1,0 +1,10 @@
+.device-type-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.mat-form-field {
+    width: 70%;
+    min-width: 180px;
+    max-width: 400px;
+}

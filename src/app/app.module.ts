@@ -37,7 +37,10 @@ import {
   MatFormFieldModule,
   MatTabsModule,
   MatMenuModule,
-  MatSliderModule
+  MatSliderModule,
+  MatDialogModule,
+  MatRadioModule,
+  MatExpansionModule
 } from '@angular/material';
 
 // Project components
@@ -56,6 +59,10 @@ import { TempSensorComponent } from './device-card/temp-sensor/temp-sensor.compo
 import { SpeakersComponent } from './device-card/speakers/speakers.component'
 import { ApplianceComponent } from './device-card/appliance/appliance.component';
 import { TvCardComponent } from './device-card/tv-card/tv-card.component';
+import { AddDeviceDialogComponent } from './modals/add-device-dialog/add-device-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RemoveCategoryDialogComponent } from 'src/app/modals/remove-category-dialog/remove-category-dialog.component';
+import { AddCategoryDialogComponent } from './modals/add-category-dialog/add-category-dialog.component';
 
 
 @NgModule({
@@ -72,6 +79,9 @@ import { TvCardComponent } from './device-card/tv-card/tv-card.component';
     SpeakersComponent,
     ApplianceComponent,
     TvCardComponent,
+    AddDeviceDialogComponent,
+    RemoveCategoryDialogComponent,
+    AddCategoryDialogComponent,
 
   ],
   imports: [
@@ -110,9 +120,15 @@ import { TvCardComponent } from './device-card/tv-card/tv-card.component';
     MatTooltipModule,
     MatChipsModule,
     MatSliderModule,
+    MatDialogModule,
+    MatRadioModule,
+    MatExpansionModule,
+    MatCheckboxModule,
 
     //Other Modules
     ChartsModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgbModule.forRoot(),
   ],
   providers: [
@@ -121,6 +137,11 @@ import { TvCardComponent } from './device-card/tv-card/tv-card.component';
     { 
       provide: 'BASE_URL', useFactory: getBaseUrl 
     }
+  ],
+  entryComponents:[
+    AddDeviceDialogComponent,
+    RemoveCategoryDialogComponent,
+    AddCategoryDialogComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
 <div class="grid-container" [style.margin-top.px]="( isExtraSmallScreen$ | async ) ? 120 : 80">
   <mat-grid-list style="width:100%;" [cols]="(isSmallScreen$ | async) ? 1 : 2" cols="2" [rowHeight]="( isExtraSmallScreen$ | async ) ? '4:3.3' : '4:3.5'">
-    
+
     <ng-container *ngFor="let device of devices" [style.background-color]="'blue'">
       <mat-grid-tile>
         <div style="width:95%; height:90%; padding: 0px 0px 16px 0px;margin: 0px 0px 0px 0px">
@@ -11,27 +11,30 @@
       </mat-grid-tile>
     </ng-container>
 
-    <!-- <button mat-raised-button color='warn' (click)='popCard()'>
-      Pop card
-    </button> -->
-
     <mat-grid-tile>
-      <mat-card class="container" [ngStyle]="{'max-width': (isSmallScreen$ | async) ? '550px' : '500px'}" style="width:352px;height:288px">
-        <mat-card-header>
-            <mat-card-title> 
-              Add device 
-            </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="row d-flex justify-content-center">
-          <button 
-            mat-icon-button
-            aria-label="Add category"
-            style="margin-top:50px;width:100px; height: 100px;line-height: 100px;"
-          >
-            <mat-icon style="margin-left:-75px;font-size:100px;">add</mat-icon>
-          </button>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
+        <div class="container" style="width:90%; height:90%; padding: 0px 0px 16px 0px;margin: 0px 0px 0px 0px">
+          <mat-card style="width:95%; height:90%;padding: 16px 16px 16px 16px;margin-left:auto;margin-right:auto;">
+            <mat-card-header style="height:10%">
+              <mat-card-title> 
+                Add device 
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content style="height:100%;margin-top:-10%;">
+              <div class="d-flex justify-content-center flex-column" style="height:100%">
+                <div class="d-flex justify-content-center">
+                  <button 
+                    mat-icon-button
+                    aria-label="Add category"
+                    style="margin-top:50px;width:100px; height: 100px;line-height: 100px;" 
+                    (click)="addDevice()">
+                    <mat-icon style="margin-left:-75px;font-size:100px;">add</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-grid-tile>
+      
   </mat-grid-list>
 </div>

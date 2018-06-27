@@ -14,7 +14,7 @@
       </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content style="height:100vh">
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -28,17 +28,19 @@
       <span class="spacer"></span>
       <mat-menu  
         #notifMenu="matMenu" 
-        overlapTrigger='false'
+        [overlapTrigger]="false"
+        style="position:absolute"
       >
         <ng-container *ngFor="let notif_info of notif_list">
-          <button mat-menu-item
-            (click)="openSnackBar('Clicked: ' + notif_info[1])">
+          <button mat-menu-item (click)="openSnackBar('Clicked: ' + notif_info[1])">
             <mat-icon>{{ notif_info[0] }}</mat-icon>
             <span>{{ notif_info[1] }}</span>
+            <!-- https://github.com/angular/material2/issues/11365 -->
           </button>
         </ng-container>
       </mat-menu>
       <button
+        class="notif-button"
         type="button"
         aria-label="Open notifMenu"
         mat-icon-button
@@ -48,6 +50,8 @@
         <mat-icon aria-label="Notifications button icon" matBadge="2" matBadgeColor="warn" [matBadgeHidden]="notif_badge_hidden">notifications</mat-icon>
       </button>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <div style="height:100%">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

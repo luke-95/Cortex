@@ -27,5 +27,19 @@
         "/assets/**"
       ]
     }
-  }]
+  }],
+  "dataGroups": [
+    {
+      "name": "api-devices",
+      "urls": [
+        "https://cortex.azurewebsites.net/api/v1/Devices/"
+      ],
+      "cacheConfig": {
+        "maxSize": 1024,
+        "maxAge": "24h",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    }
+  ]
 }

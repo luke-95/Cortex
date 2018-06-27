@@ -7,11 +7,10 @@
       <mat-tab label="Login">
         <mat-card-content>
             <mat-card-title class="login-title-padding">Please login to continue</mat-card-title>
-            <form (ngSubmit)="onSubmit()">
               <div>
                 <mat-form-field  appearance="outline">
                   <mat-label>Username</mat-label>
-                  <input matInput formControlName="userName" autocomplete="username" required>
+                  <input matInput  autocomplete="username" required>
                   <mat-error *ngIf="isFieldInvalid('userName')">
                     Please enter your user name
                   </mat-error>
@@ -20,7 +19,7 @@
               <div>
                 <mat-form-field  appearance="outline">
                   <mat-label>Password</mat-label>
-                  <input matInput [type]="hide_login_password? 'password' : 'text'" formControlName="password" autocomplete="current-password" required>
+                  <input matInput [type]="hide_login_password? 'password' : 'text'"  autocomplete="current-password" required>
                   <mat-icon matSuffix (click)="hide_login_password = !hide_login_password">{{hide_login_password ? 'visibility' : 'visibility_off'}}</mat-icon>
                   <mat-error *ngIf="isFieldInvalid('password')">
                     Please enter your password
@@ -46,24 +45,22 @@
                   </button>
                 </mat-card-actions>
               </div>
-            </form>
           </mat-card-content>  
         </mat-tab>
         <mat-tab label="Register">
           <mat-card-content>
             <mat-card-title class="register-title-padding">New Account</mat-card-title>
-              <form (ngSubmit)="onSubmit()">
                 <div>
                   <mat-form-field appearance="outline">
                       <mat-label>Email</mat-label>
-                    <input matInput [attr.formControl]="email" formControlName="email" autocomplete="email"required>
+                    <input matInput autocomplete="email"required>
                     <mat-error *ngIf="email.invalid">{{ getEmailErrorMessage() }}</mat-error>
                   </mat-form-field>
                 </div>
                 <div>
                   <mat-form-field appearance="outline">
                     <mat-label>Username</mat-label>
-                    <input matInput formControlName="userName" autocomplete="username" required>
+                    <input matInput autocomplete="username" required>
                     <mat-error *ngIf="isFieldInvalid('userName')">
                       Please enter your user name
                     </mat-error>
@@ -72,7 +69,7 @@
                 <div>
                   <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input matInput [type]="hide_register_password? 'password' : 'text'" formControlName="password" autocomplete="new-password" required>
+                    <input matInput [type]="hide_register_password? 'password' : 'text'"  autocomplete="new-password" required>
                     <mat-icon matSuffix (click)="hide_register_password = !hide_register_password">{{hide_register_password ? 'visibility' : 'visibility_off'}}</mat-icon>
                     <mat-error *ngIf="isFieldInvalid('password')">
                       Please enter your password
@@ -82,7 +79,7 @@
                 <div>
                   <mat-form-field appearance="outline">
                     <mat-label>Confirm Password</mat-label>
-                    <input matInput type="password" formControlName="confirmPassword" autocomplete="off" required>
+                    <input matInput type="password"  autocomplete="off" required>
                     <mat-error *ngIf="isFieldInvalid('confirmPassword')">
                       Please confirm your password
                     </mat-error>
@@ -96,7 +93,6 @@
                     Register
                   </button>
                 </div>
-              </form>
           </mat-card-content>
         </mat-tab>
       </mat-tab-group>

@@ -1,0 +1,17 @@
+<mat-card-header style="text-align:center">
+  <h3 style="display:inline-block;margin-left:auto;margin-right:auto;">
+    Add Category
+  </h3>
+</mat-card-header>
+<mat-card-content class="mt-16">
+  <div class="d-flex align-items-center flex-column mt-16">
+    <mat-form-field class="mt-8" appearance="outline">
+      <input matInput placeholder="Category Name" [(ngModel)]="new_category_name">
+    </mat-form-field>
+    <mat-checkbox class="mt-8" [(ngModel)]="fill_category_flag">Auto-fill with devices</mat-checkbox>
+  </div>
+  <mat-card-actions style="text-align:center" class="mt-16">
+      <button mat-button color="warn" (click)="close()">Cancel</button>
+      <button mat-button color="primary" (click)="save()"> Confirm </button>
+  </mat-card-actions>
+</mat-card-content>

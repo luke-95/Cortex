@@ -4,6 +4,10 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Device } from '../models/Device';
 import { DashboardService } from '../services/dashboard-service/dashboard.service';
+import { Category } from 'src/app/models/category';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { AddDeviceDialogComponent } from '../modals/add-device-dialog/add-device-dialog.component';
+import { AccountPageComponent } from '../account-page/account-page.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,9 +17,14 @@ import { DashboardService } from '../services/dashboard-service/dashboard.servic
 
 export class DashboardComponent {
   @Input() devices: Array<Device>;
+  @Input() category: Category;
+  
   cols = 2;
 
-  constructor (private breakpointObserver: BreakpointObserver, private _dashboardService: DashboardService)
+  constructor (
+    private breakpointObserver: BreakpointObserver, 
+    private _dashboardService: DashboardService,
+    public dialog: MatDialog)
   {
 
   }
@@ -27,6 +36,14 @@ export class DashboardComponent {
 
   initDevices()
   {
+  }
+
+  addDevice() {
+    let dialogRef = this.dialog.open(AddDeviceDialogComponent, {
+      height: '580px',
+      width: '500px',
+      panelClass: 'slim-padding-dialogue'
+    });
   }
 
 

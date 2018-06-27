@@ -1,21 +1,31 @@
-<mat-card class="devices container-fluid" style="padding: 0px 0px 0px 0px;margin: 0px 0px 0px 0px;">
+<mat-card class="devices container-fluid" style="min-height:200px;padding: 0px 0px 0px 0px;margin: 0px 0px 0px 0px;">
   <mat-card-content >
       <mat-chip-list  class='chips-filters'>
         <mat-chip class='custom-chip' [selectable]="'true'" *ngFor="let device of devices" [style.background-color]="getColorForType(device.Type)">{{ device.Type }}</mat-chip>
         <mat-chip style="background-color: rgba(220, 220, 220, 0.3)">Clear All<mat-icon matChipRemove>cancel</mat-icon></mat-chip>
       </mat-chip-list>
 
-      <mat-tab-group style="margin-left:5px">
-        <mat-tab *ngFor="let my_space of spaces_list" label={{my_space.title}}>
+      <mat-tab-group 
+      [selectedIndex]="selected.value" 
+      (selectedIndexChange)="tabChanged($event)"
+      style="margin-left:5px">
+      <ng-container *ngIf="categories.length < 1">
+        <mat-tab label="All">
+
+        </mat-tab>
+      </ng-container>
+        <mat-tab *ngFor="let category of categories" label={{category.name}}>
           <ng-template matTabContent>
-            <app-dashboard [title]="my_space.title" [devices]="devices"></app-dashboard>
+            <app-dashboard [title]="category.name" [devices]="category.devices"></app-dashboard>
           </ng-template>
         </mat-tab>
-        <mat-tab label="Add" style='width:20px' isAttached='false'>
+
+        <!-- <mat-tab label="Add" style='width:20px' isAttached='false'>
           <ng-template mat-tab-label >
             <mat-icon>add</mat-icon>
           </ng-template>
-        </mat-tab>
+        </mat-tab> -->
+
       </mat-tab-group>
     </mat-card-content>
 </mat-card>

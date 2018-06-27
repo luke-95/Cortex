@@ -1,24 +1,41 @@
-
-<mat-card>
-  <h3>  
-    General
-  </h3> 
-  <p>
-    <mat-slide-toggle
-      class="example-margin"
-      checked="true">
-      Enable Push Notifications
-    </mat-slide-toggle>
-  </p>
-  <p>
-    <mat-form-field>
-      <mat-label>
-        Offline command expiration time
-      </mat-label>
-      <input matInput type="number" placeholder="hours">
-    </mat-form-field>
-  </p>
-</mat-card>
-
-<mat-card>
-</mat-card>
+<div class="container">
+  <mat-card class="row">
+    <div class="row">
+      <h2>
+        General
+      </h2>
+    </div>
+    <mat-card-content>
+      <div class="row mt-16">
+        <mat-slide-toggle
+          class="example-margin"
+          checked="true">
+          Enable Push Notifications
+        </mat-slide-toggle>
+      </div>
+      <div class="row mt-16">
+        <mat-form-field>
+          <mat-label>
+            Offline command expiration time
+          </mat-label>
+          <input matInput type="number" placeholder="hours">
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="row">
+    <div class="row">
+      <h2>
+        Categories
+      </h2>
+    </div>
+    <mat-card-content>
+      <div class="row mt-16">
+          <button mat-raised-button color="primary" (click)="addCategory()">Add category</button>
+      </div>
+      <div class="row mt-16">
+          <button mat-stroked-button (click)="removeCategory()" color="warn">Remove category</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

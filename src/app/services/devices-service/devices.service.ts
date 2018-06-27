@@ -22,7 +22,6 @@ export class DevicesService {
       http.get(this._url)
           .subscribe((data: Device[]) => {
           this.devices = data as Device[];
-          console.log(this.devices);
       }, error => console.error(error));
   }
 

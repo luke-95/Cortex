@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Device } from '../models/Device';
 import { DevicesService } from 'src/app/services/devices-service/devices.service';
+import { FormControl } from '@angular/forms';
+import { CategoriesService } from 'src/app/services/categories-service/categories.service';
+import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'devices-component',
@@ -8,31 +11,16 @@ import { DevicesService } from 'src/app/services/devices-service/devices.service
   styleUrls: ['./devices.component.css']
 })
 export class DevicesComponent implements OnInit {
-  public spaces_list = [
-    {
-      title: 'Favorites',
-      content: '<app-dashboard></app-dashboard>',
-    },
-    {
-      title: 'All',
-      content: '<app-dashboard></app-dashboard>',
-    },
-    {
-      title: 'Kitchen',
-      content: '<app-dashboard></app-dashboard>',
-    },
-    {
-      title: 'Outdoors',
-      content: '<app-dashboard></app-dashboard>',
-    },
-    {
-      title: 'My Custom Category',
-      content: '<app-dashboard></app-dashboard>',
-    },
-  ]
-
+  public categories: Array<Category>;
   public devices: Array<Device>;
-  constructor( private _devicesService: DevicesService) { }
+  public selected = new FormControl(0);
+
+  constructor( 
+    private _devicesService: DevicesService,
+    private _categoriesService: CategoriesService) 
+  { 
+    this.categories = _categoriesService.categories;
+  }
 
   ngOnInit() {
     this.initDevices();
@@ -50,4 +38,5 @@ export class DevicesComponent implements OnInit {
   {
     return Device.getTypeColor(Device.stringToDeviceType(Type));
   }
+
 }
