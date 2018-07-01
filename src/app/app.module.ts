@@ -63,6 +63,7 @@ import { AddDeviceDialogComponent } from './modals/add-device-dialog/add-device-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RemoveCategoryDialogComponent } from 'src/app/modals/remove-category-dialog/remove-category-dialog.component';
 import { AddCategoryDialogComponent } from './modals/add-category-dialog/add-category-dialog.component';
+import { SmartLockComponent } from './device-card/smart-lock/smart-lock.component';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { AddCategoryDialogComponent } from './modals/add-category-dialog/add-cat
     AddDeviceDialogComponent,
     RemoveCategoryDialogComponent,
     AddCategoryDialogComponent,
+    SmartLockComponent,
 
   ],
   imports: [

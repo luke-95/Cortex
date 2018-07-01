@@ -41,6 +41,10 @@ export class Device {
                 color = "#FF9800";
                 break;
             }
+            case DeviceType.SmartLock: {
+                color = "#FF5722";
+                break;
+            }
         }
         return color;
     }

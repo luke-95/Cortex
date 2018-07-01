@@ -1,10 +1,16 @@
-<div class="d-flex align-content-around flex-column" style="padding:8px; height:85%">
+<div class="d-flex justify-content-around flex-column" style="padding:8px; height:85%">
     <div class="row d-flex">
       <div class="col-3 mr-auto" style="text-align:left">
         <span><b>Current Channel:</b></span>
       </div>
       <div class="col" style="text-align: right;font-weight: 500">
-        <span>Antena 1</span>
+        <mat-form-field>
+            <mat-select [placeholder]="change_program_placeholder" [(value)]="current_program" [disabled]="!isOn()" (selectionChange)="programChanged($event)">
+              <mat-option *ngFor="let program of program_names" [value]="program">
+                {{ program }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
       </div>
     </div>
     <div class="row d-flex" style="margin-top:16px">
@@ -12,7 +18,7 @@
         <span>Now Showing:</span>
       </div>
       <div class="col" style="text-align: right;font-weight: 500">
-        <span>Master Chef</span>
+        <span>{{ current_show }}</span>
       </div>
     </div>
 
@@ -22,18 +28,28 @@
       </div>
       <div class="col" style="text-align: right">
         <mat-slider
-        thumbLabel 
-        [displayWith]="formatVolumeLabel"
-        tickInterval="0"
-        min="0"
-        max="100"></mat-slider>
+          thumbLabel 
+          [displayWith]="formatVolumeLabel"
+          tickInterval="0"
+          min="0"
+          max="100"
+          [disabled]="!isOn()"></mat-slider>
       </div>
     </div>
 
-    <div class="row mt-auto d-flex align-items-start">
+    <div class="row d-flex align-items-start">
       <div class="col d-flex justify-content-around">
-        <button mat-raised-button color="primary">View Guide</button>
-        <button mat-raised-button color="primary">Open Livestream</button>
+        <!-- <ng-container *ngIf="is_on; then turnOff else turnOn"> </ng-container>
+        <ng-template #turnOff>
+          <button mat-stroked-button color="warn" (click)="switchState()" [@powerState]="'off'"> Turn Off</button>
+        </ng-template>
+        <ng-template #turnOn> -->
+          <button mat-raised-button color="primary" (click)="switchState()" [@powerState]="this.is_on"> {{ power_button_text }} </button>
+        <!-- </ng-template> -->
+        
+        <button mat-raised-button color="primary"> View Guide </button>
+        <!-- <button mat-raised-button color="primary" [disabled]="!isOn()"> Open Livestream </button> -->
       </div>
     </div>
+
 </div>

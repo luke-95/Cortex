@@ -1,20 +1,22 @@
-<div class="d-flex align-content-around flex-column bg-svg" style="padding:8px;height:85%;">
+<div class="d-flex justify-content-around flex-column" style="padding:8px;height:85%;">
   <div class="row d-flex">
     <div class="col-3 mr-auto" style="text-align:left">
-      <span><b>Now Playing:</b></span>
+      <span><b> {{ status_label }} </b></span>
     </div>
     <div class="col" style="text-align: right;font-weight: 500">
-      <span>Șuie Paparude - Omul de Gheață</span>
+      <span> {{now_playing }} </span>
     </div>
   </div>
+
   <div class="row" style="padding-top:16px">
     <div class="col-1 my-auto">
       <span>Mute</span>
     </div>
     <div class="col" style="text-align: right">
-      <mat-slide-toggle (click)="toggleMute()" >{{ mute_toggle_label }}</mat-slide-toggle>
+      <mat-slide-toggle (click)="toggleMute()">{{ mute_toggle_label }}</mat-slide-toggle>
     </div>
   </div>
+
   <div class="row" style="padding-top: 8px">
     <div class="col-1 my-auto">
       <span>Volume</span>
@@ -28,18 +30,20 @@
       max="100"></mat-slider>
     </div>
   </div>
-  <div class="row mt-auto d-flex align-items-start">
+
+  <div class="row d-flex align-items-start">
     <div class="col d-flex justify-content-around">
       <ng-container *ngIf="(isExtraSmallScreen$ | async)">
-          <button mat-mini-fab color="primary"><mat-icon>skip_previous</mat-icon></button>
-          <button mat-mini-fab color="primary"><mat-icon>play_arrow</mat-icon></button>
-          <button mat-mini-fab color="primary"><mat-icon>skip_next</mat-icon></button>
+          <button mat-mini-fab color="primary" (click)="playPrev()"><mat-icon>skip_previous</mat-icon></button>
+          <button mat-mini-fab color="primary" (click)="playPause()"><mat-icon> {{ play_pause_button }} </mat-icon></button>
+          <button mat-mini-fab color="primary" (click)="playNext()"><mat-icon>skip_next</mat-icon></button>
       </ng-container>
       <ng-container *ngIf="!(isExtraSmallScreen$ | async)">
-          <button mat-fab color="primary"><mat-icon>skip_previous</mat-icon></button>
-          <button mat-fab color="primary"><mat-icon>play_arrow</mat-icon></button>
-          <button mat-fab color="primary"><mat-icon>skip_next</mat-icon></button>
+          <button mat-fab color="primary" (click)="playPrev()"><mat-icon>skip_previous</mat-icon></button>
+          <button mat-fab color="primary" (click)="playPause()"><mat-icon> {{ play_pause_button }} </mat-icon></button>
+          <button mat-fab color="primary" (click)="playNext()"><mat-icon>skip_next</mat-icon></button>
       </ng-container>
     </div>
   </div>
+  
 </div>

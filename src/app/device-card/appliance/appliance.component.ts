@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-appliance',
+  selector: 'device-appliance',
   templateUrl: './appliance.component.html',
   styleUrls: ['./appliance.component.css']
 })
