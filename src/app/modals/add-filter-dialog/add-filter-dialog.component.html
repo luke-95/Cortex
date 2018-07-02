@@ -1,0 +1,20 @@
+<mat-card-header style="text-align:center">
+    <h3 style="display:inline-block;margin-left:auto;margin-right:auto;">
+      Add Filter to {{ category.name }}
+    </h3>
+  </mat-card-header>
+  <mat-card-content class="mt-16">
+    <div class="d-flex align-items-center flex-column">
+      <mat-form-field>
+        <mat-select placeholder="Select filter" [(ngModel)]="selected_filter">
+          <mat-option *ngFor="let filter of filters" [value]="filter">
+            {{ filter }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-card-actions style="text-align:center" class="mt-16">
+        <button mat-button color="warn" (click)="close()">Cancel</button>
+        <button mat-button color="primary" (click)="save()"> Confirm </button>
+    </mat-card-actions>
+  </mat-card-content>

@@ -64,6 +64,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RemoveCategoryDialogComponent } from 'src/app/modals/remove-category-dialog/remove-category-dialog.component';
 import { AddCategoryDialogComponent } from './modals/add-category-dialog/add-category-dialog.component';
 import { SmartLockComponent } from './device-card/smart-lock/smart-lock.component';
+import { AddFilterDialogComponent } from './modals/add-filter-dialog/add-filter-dialog.component';
+import { DashboardSchematicComponent } from './schematics/dashboard-schematic/dashboard-schematic.component';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { AreYouSureDialogComponent } from './modals/are-you-sure-dialog/are-you-sure-dialog.component';
+import { HttpErrorHandler } from 'src/app/services/http-error-handler-service/http-error-handler.service';
+import { MessageService } from './services/message-service/message-service.service';
 
 
 @NgModule({
@@ -84,6 +90,9 @@ import { SmartLockComponent } from './device-card/smart-lock/smart-lock.componen
     RemoveCategoryDialogComponent,
     AddCategoryDialogComponent,
     SmartLockComponent,
+    AddFilterDialogComponent,
+    DashboardSchematicComponent,
+    AreYouSureDialogComponent,
 
   ],
   imports: [
@@ -132,18 +141,23 @@ import { SmartLockComponent } from './device-card/smart-lock/smart-lock.componen
     FormsModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
+    ScrollDispatchModule
   ],
   providers: [
     AuthGuard, 
     AuthService,
     { 
       provide: 'BASE_URL', useFactory: getBaseUrl 
-    }
+    },
+    HttpErrorHandler,
+    MessageService,
   ],
   entryComponents:[
     AddDeviceDialogComponent,
     RemoveCategoryDialogComponent,
-    AddCategoryDialogComponent
+    AddCategoryDialogComponent,
+    AddFilterDialogComponent,
+    AreYouSureDialogComponent
   ],
   bootstrap: [AppComponent]
 })
@@ -151,5 +165,6 @@ import { SmartLockComponent } from './device-card/smart-lock/smart-lock.componen
 export class AppModule { }
 
 export function getBaseUrl() {
-  return "https://cortex.azurewebsites.net/api/v1/"
+  return "https://cortex.azurewebsites.net/api/v1/";
+  // return "http://localhost:52932/api/v1/"
 }

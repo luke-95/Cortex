@@ -53,6 +53,8 @@ export class SpeakersComponent implements OnInit {
     this.now_playing = this.getRandomSong();
     this.paused_song = this.now_playing;
     this.previous_songs = [];
+
+    this.playPause();
   }
 
   ngOnInit() {

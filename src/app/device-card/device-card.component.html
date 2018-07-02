@@ -1,14 +1,26 @@
 <ng-container [ngSwitch]='device.Type' >
-  <mat-card class="device-mat-card">
+  <mat-card class="device-mat-card" style="background-image: linear-gradient(getTitleColor(), white)">
     <mat-card-header>
-        <mat-card-title [style.color]="getTitleColor()">
-          {{ device.Name }}
-        </mat-card-title>
-      </mat-card-header>
+      <mat-card-title [style.color]="getTitleColor()">
+        {{ device.Name }}
+        <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+          <button mat-menu-item (click)="removeDevice()">Remove from category</button>
+        </mat-menu>
+      </mat-card-title>
+    </mat-card-header>
+    
     <device-temp-sensor *ngSwitchCase="deviceType.TempSensor"></device-temp-sensor>
+    
     <device-speakers *ngSwitchCase="deviceType.Audio"></device-speakers>
+    
     <device-tv *ngSwitchCase="deviceType.Video"></device-tv>
-      <device-smart-lock *ngSwitchCase="deviceType.SmartLock"></device-smart-lock>
+    
+    <device-smart-lock *ngSwitchCase="deviceType.SmartLock" [device]="device"></device-smart-lock>
+    
     <div *ngSwitchDefault></div>
+  
   </mat-card>
 </ng-container>

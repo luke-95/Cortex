@@ -9,11 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class AccountPageComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
-    this.http.get('http://localhost:52932/api/blogs').subscribe(
-      data => {
-        console.log(data);
-      })
+  ngOnInit() 
+  {
+
   } 
 
 }

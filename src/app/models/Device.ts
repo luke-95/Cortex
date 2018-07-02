@@ -5,13 +5,15 @@ export class Device {
     public Name: string;    
     public Type: string;
     public IsOnline: boolean;
-    public AudioDevice: Object;
+    // public AudioDevice: Object;
+    public UserId: number;
     // color: string;
 
     constructor(Id:number, Name:string, Type:string) {
         this.Id = Id;
         this.Name = Name;
         this.Type = Type;
+        this.IsOnline = true;
     }
     
     public static getTypeColor(type:DeviceType) {
@@ -30,7 +32,7 @@ export class Device {
                 break;
             }
             case DeviceType.Security: {
-                color = "#03A9F4";
+                color = "#673AB7";
                 break;
             }
             case DeviceType.Sensor: {
@@ -42,7 +44,7 @@ export class Device {
                 break;
             }
             case DeviceType.SmartLock: {
-                color = "#FF5722";
+                color = "#1E88E5";
                 break;
             }
         }
@@ -70,6 +72,10 @@ export class Device {
             }
             case "Appliance": {
                 deviceType = DeviceType.Appliance;
+                break;
+            }
+            case "SmartLock": {
+                deviceType = DeviceType.SmartLock;
                 break;
             }
             default: {

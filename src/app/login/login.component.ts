@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormControl } from '@angular/forms';
+import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AppComponent } from '../app.component';
@@ -10,6 +10,7 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public loginForm: FormGroup;
   usernameLoginFormControl = new FormControl(0);
   passwordLoginFormControl = new FormControl(0);
 
@@ -22,7 +23,18 @@ export class LoginComponent implements OnInit {
   hide_login_password = true;
   hide_register_password = true;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+    fb: FormBuilder
+  ) 
+  {
+    this.loginForm = fb.group(
+      {
+
+      }
+    );
+  }
 
   ngOnInit() {
   }

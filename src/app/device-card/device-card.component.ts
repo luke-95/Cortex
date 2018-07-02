@@ -6,6 +6,8 @@ import '../models/DeviceType';
 import '../models/Device';
 import { DeviceType } from '../models/DeviceType';
 import { Device } from '../models/Device';
+import { DevicesService } from '../services/devices-service/devices.service';
+import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'device-card',
@@ -16,8 +18,10 @@ import { Device } from '../models/Device';
 
 export class DeviceCardComponent implements OnInit {
   @Input() device: Device;
+  @Input() category: Category;
   deviceType = DeviceType;
-  constructor(private breakpointObserver: BreakpointObserver,) {
+  constructor(private breakpointObserver: BreakpointObserver,
+    private _devicesService: DevicesService) {
 
   }
   
@@ -36,5 +40,9 @@ export class DeviceCardComponent implements OnInit {
   getTitleColor() {
     // return "red"
     return Device.getTypeColor(Device.stringToDeviceType(this.device.Type));
+  }
+
+  removeDevice() {
+    this.category.removeDevice(this.device);
   }
 }

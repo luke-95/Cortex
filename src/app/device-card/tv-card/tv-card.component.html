@@ -15,7 +15,7 @@
     </div>
     <div class="row d-flex" style="margin-top:16px">
       <div class="col-3 mr-auto" style="text-align:left">
-        <span>Now Showing:</span>
+        <span><b>Now Showing:</b></span>
       </div>
       <div class="col" style="text-align: right;font-weight: 500">
         <span>{{ current_show }}</span>
@@ -44,7 +44,7 @@
           <button mat-stroked-button color="warn" (click)="switchState()" [@powerState]="'off'"> Turn Off</button>
         </ng-template>
         <ng-template #turnOn> -->
-          <button mat-raised-button color="primary" (click)="switchState()" [@powerState]="this.is_on"> {{ power_button_text }} </button>
+        <button mat-raised-button color="primary" (click)="switchState()" [@powerState]="this.is_on"> {{ power_button_text }} </button>
         <!-- </ng-template> -->
         
         <button mat-raised-button color="primary"> View Guide </button>

@@ -1,9 +1,9 @@
-<div class="d-flex justify-content-around flex-column" style="padding:8px;height:85%;">
+<div class="d-flex justify-content-around flex-column bg-svg" style="padding:8px;height:85%;">
   <div class="row d-flex">
-    <div class="col-3 mr-auto" style="text-align:left">
+    <div class="col-4 mr-auto status-label" style="text-align:left">
       <span><b> {{ status_label }} </b></span>
     </div>
-    <div class="col" style="text-align: right;font-weight: 500">
+    <div class="col song-title" style="text-align: right;font-weight: 500;font-size: 1.1em">
       <span> {{now_playing }} </span>
     </div>
   </div>
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="row" style="padding-top: 8px">
+  <div class="row" style="padding-top: 0px">
     <div class="col-1 my-auto">
       <span>Volume</span>
     </div>
@@ -38,8 +38,8 @@
           <button mat-mini-fab color="primary" (click)="playPause()"><mat-icon> {{ play_pause_button }} </mat-icon></button>
           <button mat-mini-fab color="primary" (click)="playNext()"><mat-icon>skip_next</mat-icon></button>
       </ng-container>
-      <ng-container *ngIf="!(isExtraSmallScreen$ | async)">
-          <button mat-fab color="primary" (click)="playPrev()"><mat-icon>skip_previous</mat-icon></button>
+      <ng-container *ngIf="!(isExtraSmallScreen$ | async)" style="height:40%">
+          <button mat-fab color="primary" (click)="playPrev()"><mat-icon >skip_previous</mat-icon></button>
           <button mat-fab color="primary" (click)="playPause()"><mat-icon> {{ play_pause_button }} </mat-icon></button>
           <button mat-fab color="primary" (click)="playNext()"><mat-icon>skip_next</mat-icon></button>
       </ng-container>

@@ -7,5 +7,4 @@ export enum DeviceType {
     Sensor = "Sensor",
     Appliance = "Appliance",
     Other = "Other"
-
 }

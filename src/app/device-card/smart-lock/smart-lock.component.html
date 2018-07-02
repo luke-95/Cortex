@@ -1,14 +1,47 @@
-<div class="d-flex justify-content-around flex-column" style="padding:8px;height:85%;">
+<div cdkScrollable class="d-flex justify-content-around flex-column" style="padding:8px;height:85%;">
+  
   <div class="row">
-    
+      <div class="col-3 mr-auto" style="text-align:left;font-size: 1.1em;">
+          <span><b>Status:</b></span>
+      </div>
+      <div class="col" style="text-align: right; font-size: 1.2em" [style.color]="status_color">
+        {{ status }}
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 d-flex align-items-center mr-auto" style="text-align:left; font-size: 1.1em">
+        <span><b>Set timer:</b></span>
+    </div>
+    <div class="col" style="text-align: right;">
+      
+      <mat-form-field style="display:inline-block;width: 50px;">
+        <mat-select placeholder="Time" [(ngModel)]="time_value" name="time_value">
+          <mat-option *ngFor="let time_value of time_values" [value]="time_value">
+            {{ time_value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field style="display:inline-block;width: 130px;">
+        <mat-select placeholder="Minutes" [(ngModel)]="time_unit" name="time_unit">
+          <mat-option *ngFor="let time_unit of time_units" [value]="time_unit">
+            {{ time_unit }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <div style="display:block;text-align: right">
+        <button mat-raised-button (click)="setTimer()" > Set timer </button>
+    </div>
+    </div>
   </div>
   <div class="row">
-    
   </div>
-  <div class="row">
-    
-  </div>
-  <div class="row">
-    
+
+  <div class="row d-flex align-items-start">
+    <div class="col d-flex justify-content-around">
+      <button mat-raised-button (click)="toggleLock()" [@LockState]="this.status"> {{ lock_button_text }} </button>
+    </div>
   </div>
 </div>

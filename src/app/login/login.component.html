@@ -1,4 +1,5 @@
 <mat-toolbar color="primary">
+  <img id="app_icon" src="./assets/icon_white.png" style="height:50%;margin-right:8px">
   {{ app_title }}
 </mat-toolbar>
 <mat-card class='main-login mat-typography'>
@@ -7,6 +8,7 @@
       <mat-tab label="Login">
         <mat-card-content>
             <mat-card-title class="login-title-padding">Please login to continue</mat-card-title>
+            <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="attemptLogin()">
               <div>
                 <mat-form-field  appearance="outline">
                   <mat-label>Username</mat-label>
@@ -31,6 +33,7 @@
                   <button mat-stroked-button
                     matTooltip="For Demo purposes"
                     color="primary"
+                    type="button"
                     [style.margin-bottom.px]="10"
                     (click)='skipLogin()'
                     >
@@ -38,6 +41,7 @@
                   </button>
                   <button mat-raised-button 
                     color="primary"
+                    type="submit"
                     class="login-button"
                     (click)='attemptLogin()'
                     >
@@ -45,6 +49,7 @@
                   </button>
                 </mat-card-actions>
               </div>
+            </form>
           </mat-card-content>  
         </mat-tab>
         <mat-tab label="Register">

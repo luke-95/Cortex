@@ -14,8 +14,10 @@ import {
   animations: [
     trigger('powerState', [
       state('on', style({
-        backgroundColor: '#e53935',
-        color: '#ffffff',
+        backgroundColor: '#ffffff ',
+        color: '#999999',
+        // backgroundColor: '#e53935',
+        // color: '#ffffff',
         // transform: 'scale(1)'
       })),
       state('off',   style({

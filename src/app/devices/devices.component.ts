@@ -4,6 +4,8 @@ import { DevicesService } from 'src/app/services/devices-service/devices.service
 import { FormControl } from '@angular/forms';
 import { CategoriesService } from 'src/app/services/categories-service/categories.service';
 import { Category } from 'src/app/models/category';
+import { MatDialog } from '@angular/material';
+import { AddFilterDialogComponent } from '../modals/add-filter-dialog/add-filter-dialog.component';
 
 @Component({
   selector: 'devices-component',
@@ -14,12 +16,16 @@ export class DevicesComponent implements OnInit {
   public categories: Array<Category>;
   public devices: Array<Device>;
   public selected = new FormControl(0);
+  public active_filters: Array<string>;
+  public hide_chips = true;
 
   constructor( 
     private _devicesService: DevicesService,
-    private _categoriesService: CategoriesService) 
+    private _categoriesService: CategoriesService,
+    public dialog: MatDialog) 
   { 
     this.categories = _categoriesService.categories;
+    this.active_filters = [];
   }
 
   ngOnInit() {
@@ -31,12 +37,44 @@ export class DevicesComponent implements OnInit {
     this._devicesService.getDevices()
       .subscribe(data => {
         this.devices = data;
+        this.hide_chips = false;
+        this.active_filters = this.categories[this.selected.value].filters;
       });
+  }
+
+  addFilter()
+  {
+    let current_category = this._categoriesService.categories[this.selected.value];
+    let deviceRef = this.dialog.open(AddFilterDialogComponent, {
+      height: '240px',
+      width: '400px',
+      panelClass: 'slim-padding-dialogue',
+      data: {
+        category: current_category
+      }
+    });
+  }
+
+
+
+  removeAllFilters()
+  {
+    let current_category = this._categoriesService.categories[this.selected.value];
+    current_category.removeAllFilters();
+    this.active_filters = this.categories[this.selected.value].filters;
+  }
+
+  removeFilter(filter) {
+    let current_category = this._categoriesService.categories[this.selected.value];
+    current_category.removeFilter(filter);
+    this.active_filters = this.categories[this.selected.value].filters;
   }
 
   getColorForType(Type)
   {
     return Device.getTypeColor(Device.stringToDeviceType(Type));
   }
+
+  
 
 }

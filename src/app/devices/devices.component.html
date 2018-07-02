@@ -1,8 +1,16 @@
 <mat-card class="devices container-fluid" style="min-height:200px;padding: 0px 0px 0px 0px;margin: 0px 0px 0px 0px;">
   <mat-card-content >
       <mat-chip-list  class='chips-filters'>
-        <mat-chip class='custom-chip' [selectable]="'true'" *ngFor="let device of devices" [style.background-color]="getColorForType(device.Type)">{{ device.Type }}</mat-chip>
-        <mat-chip style="background-color: rgba(220, 220, 220, 0.3)">Clear All<mat-icon matChipRemove>cancel</mat-icon></mat-chip>
+        <mat-chip *ngIf="!hide_chips" style="background-color: #1E88E5" (click)="addFilter()">
+          <mat-icon style="color:white">add</mat-icon>
+        </mat-chip>
+        <mat-chip class='custom-chip' [selectable]="'true'" *ngFor="let filter of active_filters" [style.background-color]="getColorForType(filter)" 
+          (click)="removeFilter(filter)">
+          {{ filter }} <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <mat-chip *ngIf="active_filters.length > 0" style="background-color: rgba(220, 220, 220, 0.3)" (click)="removeAllFilters()">
+          Clear All 
+        </mat-chip>
       </mat-chip-list>
 
       <mat-tab-group 
@@ -16,7 +24,7 @@
 
         <mat-tab *ngFor="let category of categories" label={{category.name}}>
           <ng-template matTabContent>
-            <app-dashboard [title]="category.name" [devices]="category.devices"></app-dashboard>
+            <app-dashboard [category]="category"></app-dashboard>
           </ng-template>
         </mat-tab>
 

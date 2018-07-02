@@ -1,12 +1,12 @@
 <mat-card-header>
   <h3 style="padding: 8px">
-    Add device to category
+    Add device to {{ category.name }}
   </h3>
 </mat-card-header>
 <mat-card-content>
   <div class="mt-16">
     <mat-accordion>
-        <mat-expansion-panel>
+        <mat-expansion-panel (click)="setIsNew(false)">
           <mat-expansion-panel-header>
             <mat-panel-title>
               Add existing device
@@ -16,15 +16,15 @@
           </mat-expansion-panel-header>
           <div class="d-flex align-items-center flex-column">
             <mat-form-field>
-              <mat-select placeholder="Add existing device">
+              <mat-select placeholder="Add existing device" [(ngModel)]="selected_existing_device_name">
                 <mat-option *ngFor="let device of getDevices()" [value]="device.Name">
-                  {{device.Name}}
+                  {{ device.Name }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
           </div>
         </mat-expansion-panel>
-      <mat-expansion-panel>
+      <mat-expansion-panel (click)="setIsNew(true)">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Add new device
@@ -34,13 +34,17 @@
         </mat-expansion-panel-header>
         <div class="d-flex align-items-center flex-column">
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Device Name">
+            <input matInput placeholder="Device Name" required [(ngModel)]="new_device_name">
           </mat-form-field>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Device Type">
+            <mat-select placeholder="Device Type" [(ngModel)]="new_device_type">
+              <mat-option *ngFor="let type of types" [value]="type" >
+                {{ type }}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Device Network ID">
+            <input matInput placeholder="Device Network ID" required>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <input matInput placeholder = "Device secret token" [type]="hide_device_token? 'password' : 'text'"  autocomplete="password" required>

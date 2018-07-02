@@ -27,13 +27,7 @@ export class CategoriesService {
       }
     );
   }
-
-  removeCategory(key) {
-    this.categories.forEach( (item, index) => {
-      if(item.name === key) this.categories.splice(index,1);
-    });
-  }
-
+  
   addCategory(name, fill_with_devices) {
     let category_devices: Array<Device> = new Array();
     if (fill_with_devices) {
@@ -41,4 +35,15 @@ export class CategoriesService {
     }
     this.categories.push(new Category(name, category_devices));
   }
+
+  removeCategory(key) {
+    this.categories.forEach( (item, index) => {
+      if(item.name === key) this.categories.splice(index,1);
+    });
+  }
+
+  removeDeviceFromCategory(device: Device, category: Category) {
+    category.removeDevice(device);
+  }
+
 }

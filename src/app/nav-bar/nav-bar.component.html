@@ -6,12 +6,30 @@
     [attr.role]="(isExtraSmallScreen$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isExtraSmallScreen$ | async) ? 'push' : 'side'"
     [opened]="!(isExtraSmallScreen$ | async)">
-    <mat-toolbar color="primary">{{ app_title }}</mat-toolbar>
+    <mat-toolbar color="primary">
+       <img id="app_icon" src="./assets/icon_white.png" style="height:50%;margin-right:8px">
+       {{ app_title }}
+    </mat-toolbar>
     <mat-nav-list>
+      
       <a  mat-list-item *ngFor='let route of route_titles' [routerLink]='route' routerLinkActive='active'>
         <mat-icon class="menu-icon" [attr.aria-label]='route_data_dict[route][0]'>{{ route_data_dict[route][1] }}</mat-icon>
         <span>{{ route_data_dict[route][0] }}</span>      
       </a>
+
+      <!-- <a mat-list-item style="height:48px">
+
+      </a> -->
+
+      <!-- <a mat-list-item>
+        <div class="justify-content-center" style="height:100%;width:100%;"
+        >
+          <div class="container" style="height:100%; width:fit-content">
+            <img id="app_icon" src="./assets/icon_white.png" style="height:100%;">
+          </div>
+        </div>
+      </a> -->
+      
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content style="height:100vh">
@@ -27,9 +45,8 @@
       <span> {{ nav_title }}</span>
       <span class="spacer"></span>
       <mat-menu  
-        #notifMenu="matMenu" 
-        [overlapTrigger]="false"
-        style="position:absolute"
+        #menu="matMenu"
+        xPosition="before"
       >
         <ng-container *ngFor="let notif_info of notif_list">
           <button mat-menu-item (click)="openSnackBar('Clicked: ' + notif_info[1])">
@@ -42,9 +59,9 @@
       <button
         class="notif-button"
         type="button"
-        aria-label="Open notifMenu"
+        aria-label="Open menu"
         mat-icon-button
-        [matMenuTriggerFor]="notifMenu"
+        [matMenuTriggerFor]="menu"
         [matMenuTriggerData]="{label: 'one'}"
       >
         <mat-icon aria-label="Notifications button icon" matBadge="2" matBadgeColor="warn" [matBadgeHidden]="notif_badge_hidden">notifications</mat-icon>
