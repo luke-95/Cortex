@@ -9,10 +9,10 @@
       "urls": [
         "/Cortex/favicon.ico",
         "/Cortex/index.html",
-        "/Cortex/main.d7d4bfdb78b91c2c1b76.js",
+        "/Cortex/main.17a79484973cfcbc8e96.js",
         "/Cortex/polyfills.e3633a42d1123afc5fc9.js",
         "/Cortex/runtime.a66f828dca56eeb90e02.js",
-        "/Cortex/styles.b6f1a032691251c39ffa.css"
+        "/Cortex/styles.58714988c171d2029b3f.css"
       ],
       "patterns": [
         "https:\\/\\/fonts\\.googleapis\\.com\\/.*",
@@ -26,6 +26,7 @@
       "urls": [
         "/Cortex/assets/backgrounds/speaker.svg",
         "/Cortex/assets/config.json",
+        "/Cortex/assets/icon_white.png",
         "/Cortex/assets/icons/icon-128x128.png",
         "/Cortex/assets/icons/icon-144x144.png",
         "/Cortex/assets/icons/icon-152x152.png",
@@ -35,7 +36,7 @@
         "/Cortex/assets/icons/icon-512x512.png",
         "/Cortex/assets/icons/icon-72x72.png",
         "/Cortex/assets/icons/icon-96x96.png",
-        "/Cortex/assets/image_cache.jpg"
+        "/Cortex/assets/speaker.png"
       ],
       "patterns": []
     }
@@ -56,6 +57,7 @@
   "hashTable": {
     "/Cortex/assets/backgrounds/speaker.svg": "9e57305a0593b4cff93671b8d10f82e82fb0c1cc",
     "/Cortex/assets/config.json": "079a07c7ee7b40560826242347aab369ee036967",
+    "/Cortex/assets/icon_white.png": "7248741ab951ba9e6b5e4742de0655a7e053aad1",
     "/Cortex/assets/icons/icon-128x128.png": "2e9cf0c232f72f01c9b36603717e2716105fb0ef",
     "/Cortex/assets/icons/icon-144x144.png": "14fd694be0c13e013ab6125f0b1b93164a92c96f",
     "/Cortex/assets/icons/icon-152x152.png": "86588327f7e789f4eaf06c5ec644022185e48ebe",
@@ -65,13 +67,13 @@
     "/Cortex/assets/icons/icon-512x512.png": "719e6a4b9026452e6a89e99567f59976077e712c",
     "/Cortex/assets/icons/icon-72x72.png": "c440f1b10fafe91e886e88c7fafc282282d39b35",
     "/Cortex/assets/icons/icon-96x96.png": "3a16d72df9dab28dbe16c599510dba1edb98161b",
-    "/Cortex/assets/image_cache.jpg": "cdda449dae9334c0b84bb829ef736f8ac8ea0516",
+    "/Cortex/assets/speaker.png": "869ff3d4bfcbe28b7efd3f0d889c54d3517575b5",
     "/Cortex/favicon.ico": "8fb79e6661ec15d445302c3413a2ebfe34914237",
-    "/Cortex/index.html": "0315f1e9b1920dde3c33cedc9a67ea0ed3a94236",
-    "/Cortex/main.d7d4bfdb78b91c2c1b76.js": "48244cb779ceb43f1bb8893a57edd23dd74fd904",
+    "/Cortex/index.html": "47d2fa04b2498bb8459b561d046402daf899ee15",
+    "/Cortex/main.17a79484973cfcbc8e96.js": "09a077b46fa8594893c738c87dd727e4b4881d3e",
     "/Cortex/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
     "/Cortex/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
-    "/Cortex/styles.b6f1a032691251c39ffa.css": "2cd07e939c915f635c061ccad5999f0219553404"
+    "/Cortex/styles.58714988c171d2029b3f.css": "a4d124e79d40185f7f9e088ab36df3c631c19863"
   },
   "navigationUrls": [
     {
