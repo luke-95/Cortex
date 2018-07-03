@@ -30,7 +30,7 @@
               </div>
               <div>
                 <mat-card-actions>
-                  <button mat-stroked-button
+                  <!-- <button mat-stroked-button
                     matTooltip="For Demo purposes"
                     color="primary"
                     type="button"
@@ -38,12 +38,12 @@
                     (click)='skipLogin()'
                     >
                     Skip
-                  </button>
+                  </button> -->
                   <button mat-raised-button 
                     color="primary"
                     type="submit"
                     class="login-button"
-                    (click)='attemptLogin()'
+                    (click)='skipLogin()'
                     >
                     Login
                   </button>
@@ -52,7 +52,7 @@
             </form>
           </mat-card-content>  
         </mat-tab>
-        <mat-tab label="Register">
+        <!-- <mat-tab label="Register">
           <mat-card-content>
             <mat-card-title class="register-title-padding">New Account</mat-card-title>
                 <div>
@@ -99,7 +99,7 @@
                   </button>
                 </div>
           </mat-card-content>
-        </mat-tab>
+        </mat-tab> -->
       </mat-tab-group>
     </div>
 </mat-card>

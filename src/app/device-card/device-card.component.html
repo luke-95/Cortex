@@ -1,20 +1,29 @@
 <ng-container [ngSwitch]='device.Type' >
-  <mat-card class="device-mat-card" style="background-image: linear-gradient(getTitleColor(), white)">
-    <mat-card-header>
-      <mat-card-title [style.color]="getTitleColor()">
-        {{ device.Name }}
-        <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
+  <mat-card class="device-mat-card">
+    <mat-card-header style="display:block;">
+      <mat-card-title [style.color]="getTitleColor()" style="margin-bottom: 0px">
+        <div class="d-flex">
+          <div class="align-self-center">
+            {{ device.Name }}
+          </div>
+          <div class="ml-auto">
+            <button mat-icon-button *ngIf="show_favorites_button"  style="color: #FFCA28"(click)="toggleFavorite()">
+              <mat-icon> {{ fav_button_text }} </mat-icon>
+            </button>
+            <button *ngIf="show_remove_menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+        </div>
         <mat-menu #menu="matMenu" xPosition="before">
-          <button mat-menu-item (click)="removeDevice()">Remove from category</button>
+          <button mat-menu-item  (click)="removeDevice()"> Remove from {{ category.name }} </button>
         </mat-menu>
       </mat-card-title>
     </mat-card-header>
     
     <device-temp-sensor *ngSwitchCase="deviceType.TempSensor"></device-temp-sensor>
     
-    <device-speakers *ngSwitchCase="deviceType.Audio"></device-speakers>
+    <device-speakers *ngSwitchCase="deviceType.Audio" [device]="device"></device-speakers>
     
     <device-tv *ngSwitchCase="deviceType.Video"></device-tv>
     

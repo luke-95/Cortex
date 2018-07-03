@@ -17,14 +17,19 @@ export class Category {
     addFilter(filter: string) {
         this.filters.push(filter);
         this.filtered_devices = this.getFilteredDevices();
-
-        console.log("Added filter: " + filter);
-        console.log("Filtered devices: " + this.filtered_devices);
     }
 
     addDevice(device: Device) {
         if (!this.devices.includes(device))
         {
+            if (this.name === "Favorites")
+            {
+                device.IsFavorite = true;
+            }
+            else
+            {
+                device.Category = this.name;
+            }
             this.devices.push(device);
             this.filtered_devices = this.getFilteredDevices();
         }
@@ -43,13 +48,35 @@ export class Category {
 
     removeDevice(device) {
         this.devices.forEach( (device_item, index) => {
-            if(device_item == device) this.devices.splice(index,1);
+            if(device_item == device) {
+                this.devices.splice(index,1);
+
+                if (this.name === "Favorites")
+                {
+                    device.IsFavorite = false;
+                }
+                else
+                {
+                    device.Category = "";
+                }
+            }
         });
     }
 
     removeDeviceByName(device_name) {
         this.devices.forEach( (device_item, index) => {
-            if(device_item.Name === device_name) this.devices.splice(index,1);
+            if(device_item.Name === device_name) {
+                this.devices.splice(index,1);
+                device_item.Category = "";
+                if (this.name === "Favorites")
+                {
+                    device_item.IsFavorite = false;
+                }
+                else
+                {
+                    device_item.Category = "";
+                }
+            }
         });
     }
 

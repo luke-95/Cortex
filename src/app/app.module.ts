@@ -70,6 +70,7 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { AreYouSureDialogComponent } from './modals/are-you-sure-dialog/are-you-sure-dialog.component';
 import { HttpErrorHandler } from 'src/app/services/http-error-handler-service/http-error-handler.service';
 import { MessageService } from './services/message-service/message-service.service';
+import { NotificationsService } from './services/notification-service/notification.service';
 
 
 @NgModule({
@@ -151,6 +152,7 @@ import { MessageService } from './services/message-service/message-service.servi
     },
     HttpErrorHandler,
     MessageService,
+    NotificationsService
   ],
   entryComponents:[
     AddDeviceDialogComponent,

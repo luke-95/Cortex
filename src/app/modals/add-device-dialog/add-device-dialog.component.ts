@@ -6,6 +6,7 @@ import { DevicesService } from '../../services/devices-service/devices.service';
 import { Device } from 'src/app/models/Device';
 import { Category } from 'src/app/models/category';
 import { DeviceType } from '../../models/DeviceType';
+import { AudioDevice } from 'src/app/models/AudioDevice';
 
 @Component({
   selector: 'add-device-dialog',
@@ -31,6 +32,7 @@ export class AddDeviceDialogComponent implements OnInit {
     this.category = this.data.category;
     this.types = Object.keys(DeviceType);
     this.new_device_type = "";
+    this.hide_device_token = true;
   }
 
   ngOnInit() {
@@ -48,6 +50,13 @@ export class AddDeviceDialogComponent implements OnInit {
       if (this.new_device_name.length > 0 && this.new_device_type.length > 0)
       {
         let new_device = new Device(0, this.new_device_name, this.new_device_type);
+        
+        if (new_device.Type === "Audio")
+        {
+          // Generate an Audio Device
+          new_device.AudioDevice = new AudioDevice(new_device.Id, 0, false);
+        }
+    
         this.category.addDevice(new_device);
         this._devicesService.addDevice(new_device);
       }

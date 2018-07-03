@@ -7,7 +7,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
   styleUrls: ['./are-you-sure-dialog.component.css']
 })
 export class AreYouSureDialogComponent implements OnInit {
-  private question: string;
+  public question: string;
 
   constructor(
     public dialogRef: MatDialogRef<AreYouSureDialogComponent>,

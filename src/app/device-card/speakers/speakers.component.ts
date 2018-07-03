@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
+import { DevicesService } from '../../services/devices-service/devices.service';
+// import { $ } from 'protractor';
 
 @Component({
   selector: 'device-speakers',
@@ -9,7 +11,8 @@ import { map } from 'rxjs/internal/operators/map';
   styleUrls: ['./speakers.component.css']
 })
 export class SpeakersComponent implements OnInit {
-
+  @Input() device;
+  
   public now_playing:string;
   public is_paused: boolean;
   public status_label: string;
@@ -36,41 +39,41 @@ export class SpeakersComponent implements OnInit {
   private previous_songs: Array<string>;
   private paused_song: string;
 
-
-  is_muted:boolean = false;
   mute_toggle_label = "Off"
 
 
-  toggleMute() {
-    this.is_muted = !this.is_muted;
-    this.mute_toggle_label = this.is_muted? "On" : " Off";
-  }
-
-  constructor(private breakpointObserver: BreakpointObserver,) { 
+  
+  constructor(private breakpointObserver: BreakpointObserver, private _devicesService: DevicesService) { 
     this.is_paused = false;
     this.status_label = "Now Playing:"
     this.play_pause_button = "play_arrow";
     this.now_playing = this.getRandomSong();
     this.paused_song = this.now_playing;
     this.previous_songs = [];
-
+    
     this.playPause();
   }
-
+  
   ngOnInit() {
-
   }
-
+  
   formatLabel(value: number | null) {
     if (!value) {
       return 0;
     }
-
+    
     if (value >= 0) {
       return Math.round(value) + '%';
     }
-
+    
     return value;
+  }
+
+
+  toggleMute() {
+    this.device.AudioDevice.IsMuted = !this.device.AudioDevice.IsMuted;
+    this.mute_toggle_label = this.device.AudioDevice.IsMuted ? "On" : " Off";
+    this.updateDevice();
   }
 
   playPause() {
@@ -87,7 +90,6 @@ export class SpeakersComponent implements OnInit {
       this.play_pause_button = "play_arrow";
     }
   }
-  
 
   playNext() {
     if (this.previous_songs.length > 19) {
@@ -121,6 +123,11 @@ export class SpeakersComponent implements OnInit {
   getRandomSong() 
   {
     return this.songs[this.getRandomIndex(0, this.songs.length)];
+  }
+
+  updateDevice()
+  {
+    this._devicesService.updateDevice(this.device);
   }
 
   

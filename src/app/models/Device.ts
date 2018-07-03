@@ -1,13 +1,15 @@
 import { DeviceType } from "./DeviceType";
+import { AudioDevice } from "./AudioDevice";
 
 export class Device {
     public Id: number;
     public Name: string;    
     public Type: string;
     public IsOnline: boolean;
-    // public AudioDevice: Object;
+    public IsFavorite: boolean;
+    public Category: string;
+    public AudioDevice: AudioDevice;
     public UserId: number;
-    // color: string;
 
     constructor(Id:number, Name:string, Type:string) {
         this.Id = Id;

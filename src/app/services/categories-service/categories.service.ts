@@ -19,13 +19,38 @@ export class CategoriesService {
     _devicesService.getDevices()
       .subscribe( data => {
         this._devices = data;
-        this.categories.push(new Category('All', this._devices));
-        this.categories.push(new Category('Favorites', this._devices));
-        this.categories.push(new Category('Kitchen', this._devices));
-        this.categories.push(new Category('Outdoors', this._devices));
-        this.categories.push(new Category('My Custom Category', this._devices));
+        this.initCategories();
       }
     );
+  }
+
+  initCategories() {
+    /* ALL Category */
+    this.categories.push(new Category('All', this._devices));
+    
+    /* Favorites Category */
+    let fav_categ_index = (this.categories.push(new Category('Favorites', []))) - 1;
+    for (var _i = 0; _i < this._devices.length; _i++) {
+      let device:Device = this._devices[_i];
+      if (device.IsFavorite) {
+        this.categories[fav_categ_index].devices.push(device);
+      }
+    }
+
+    /* Other Categories */
+    console.log(this._devices);
+    for (var _i = 0; _i < this._devices.length; _i++) {
+      let device:Device = this._devices[_i];
+
+      let category_for_device = this.categories.find(categ => categ.name === device.Category);
+      if (category_for_device != undefined) {
+        category_for_device.addDevice(device);
+      } else {
+        let new_category_index = this.addCategory(device.Category, false) - 1;
+        this.categories[new_category_index].addDevice(device);
+      }
+    }
+
   }
   
   addCategory(name, fill_with_devices) {
@@ -33,7 +58,19 @@ export class CategoriesService {
     if (fill_with_devices) {
       category_devices = this._devices;
     }
-    this.categories.push(new Category(name, category_devices));
+    let new_category = new Category(name, category_devices)
+    return this.categories.push(new_category);;
+  }
+
+  updateFavorites(device) {
+    let favorite_category = this.categories.find(categ => categ.name === "Favorites");
+    if (!device.IsFavorite) {
+      favorite_category.removeDevice(device);
+    }
+    else
+    {
+      favorite_category.addDevice(device);
+    }
   }
 
   removeCategory(key) {

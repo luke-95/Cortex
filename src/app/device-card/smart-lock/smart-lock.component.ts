@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { AddDeviceDialogComponent } from '../../modals/add-device-dialog/add-device-dialog.component';
 import { AreYouSureDialogComponent } from '../../modals/are-you-sure-dialog/are-you-sure-dialog.component';
 
@@ -23,6 +23,7 @@ import { AreYouSureDialogComponent } from '../../modals/are-you-sure-dialog/are-
     ])
   ]
 })
+
 export class SmartLockComponent implements OnInit {
   @Input() device;
   public status: string;
@@ -36,7 +37,10 @@ export class SmartLockComponent implements OnInit {
   public time_unit: string;
   public status_color: string;
 
-  constructor(public dialog: MatDialog) {
+  public static snackbar_duration = 2000;
+
+  constructor(public dialog: MatDialog,
+    public snackBar: MatSnackBar) {
   }
   
   ngOnInit() {
@@ -53,7 +57,7 @@ export class SmartLockComponent implements OnInit {
     if (this.isLocked())
     {
       let dialogRef = this.dialog.open(AreYouSureDialogComponent, {
-        width: '350px',
+        width: '450px',
         panelClass: 'slim-padding-dialogue',
         data: this.lock_button_text + ' ' + this.device.Name
       });
@@ -89,12 +93,23 @@ export class SmartLockComponent implements OnInit {
     }
   }
 
-  setTimer()
-  {
-
+  public openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: SmartLockComponent.snackbar_duration,
+    });
   }
 
-
+  setTimer()
+  {
+    if (this.time_value != undefined && this.time_unit != undefined)
+    {
+      let message:string = "Timer set: " + this.time_value + " " + this.time_unit;
+      this.openSnackBar(message, "Lock Timer Set");
   
+      this.time_value = undefined;
+      this.time_unit = undefined;
+    }
+
+  }
 
 }
