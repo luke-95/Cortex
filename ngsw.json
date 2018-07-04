@@ -9,7 +9,7 @@
       "urls": [
         "/Cortex/favicon.ico",
         "/Cortex/index.html",
-        "/Cortex/main.80b7e45813c756b8074b.js",
+        "/Cortex/main.dbd1a7b7a3f88ff885b9.js",
         "/Cortex/polyfills.e3633a42d1123afc5fc9.js",
         "/Cortex/runtime.a66f828dca56eeb90e02.js",
         "/Cortex/styles.58714988c171d2029b3f.css"
@@ -69,8 +69,8 @@
     "/Cortex/assets/icons/icon-96x96.png": "3a16d72df9dab28dbe16c599510dba1edb98161b",
     "/Cortex/assets/speaker.png": "869ff3d4bfcbe28b7efd3f0d889c54d3517575b5",
     "/Cortex/favicon.ico": "8fb79e6661ec15d445302c3413a2ebfe34914237",
-    "/Cortex/index.html": "0cd6bf10b7fd32a7e4a25f8ff703bc4e2ac1a918",
-    "/Cortex/main.80b7e45813c756b8074b.js": "df35e6fd0ef944ffabbb47ab2e6ef912b555677f",
+    "/Cortex/index.html": "f6d5915c6550f5e95183a7b74cc54896c7486216",
+    "/Cortex/main.dbd1a7b7a3f88ff885b9.js": "df35e6fd0ef944ffabbb47ab2e6ef912b555677f",
     "/Cortex/polyfills.e3633a42d1123afc5fc9.js": "5261a4729f780dd900641be94bd321182959641a",
     "/Cortex/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
     "/Cortex/styles.58714988c171d2029b3f.css": "a4d124e79d40185f7f9e088ab36df3c631c19863"
