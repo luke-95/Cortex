@@ -30,8 +30,8 @@ export class AuthService {
     httpErrorHandler: HttpErrorHandler,
   )
   {
-    this._usersUrl = baseUrl + 'Users/';
-    this._loginUrl = baseUrl + 'Login/';
+    this._usersUrl = baseUrl + 'Users';
+    this._loginUrl = baseUrl + 'Login';
     this.handleError = httpErrorHandler.createHandleError('DevicesService');
   }
 
@@ -56,7 +56,7 @@ export class AuthService {
     }
     console.log(`Attempting login for ${username}`);
 
-    return this.http.get<User>(`${this._loginUrl}${username}/${password}` , httpOptions)
+    return this.http.get<User>(`${this._loginUrl}/${username}/${password}` , httpOptions)
     .pipe(
       catchError(this.handleError('loginUser', username)),
     )
@@ -64,6 +64,12 @@ export class AuthService {
 
   logout(): void {
     this.isLoggedIn = false;
+    this.user = null;
+  }
+
+  setUser(user)
+  {
+
   }
 
   setLoginSuccessful(user, isLogged)

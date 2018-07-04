@@ -4,7 +4,7 @@ import { DevicesService } from 'src/app/services/devices-service/devices.service
 import { FormControl } from '@angular/forms';
 import { CategoriesService } from 'src/app/services/categories-service/categories.service';
 import { Category } from 'src/app/models/category';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatTabChangeEvent } from '@angular/material';
 import { AddFilterDialogComponent } from '../modals/add-filter-dialog/add-filter-dialog.component';
 
 @Component({
@@ -47,7 +47,7 @@ export class DevicesComponent implements OnInit {
   addFilter()
   {
     let current_category = this._categoriesService.categories[this.selected.value];
-    let deviceRef = this.dialog.open(AddFilterDialogComponent, {
+    this.dialog.open(AddFilterDialogComponent, {
       height: '240px',
       width: '400px',
       panelClass: 'slim-padding-dialogue',
@@ -57,7 +57,10 @@ export class DevicesComponent implements OnInit {
     });
   }
 
-
+  public tabChanged(event: MatTabChangeEvent)
+  {
+    this.removeAllFilters();
+  }
 
   removeAllFilters()
   {

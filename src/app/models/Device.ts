@@ -33,18 +33,18 @@ export class Device {
                 color = "#2196F3";
                 break;
             }
-            case DeviceType.Security: {
-                color = "#673AB7";
-                break;
-            }
-            case DeviceType.Sensor: {
-                color = "#4CAF50";
-                break;
-            }
-            case DeviceType.Appliance: {
-                color = "#FF9800";
-                break;
-            }
+            // case DeviceType.Security: {
+            //     color = "#673AB7";
+            //     break;
+            // }
+            // case DeviceType.Sensor: {
+            //     color = "#4CAF50";
+            //     break;
+            // }
+            // case DeviceType.Appliance: {
+            //     color = "#FF9800";
+            //     break;
+            // }
             case DeviceType.SmartLock: {
                 color = "#1E88E5";
                 break;
@@ -64,22 +64,22 @@ export class Device {
                 deviceType = DeviceType.Video;
                 break;
             }
-            case "Security": {
-                deviceType = DeviceType.Security;
-                break;
-            }
-            case "Sensor": {
-                deviceType = DeviceType.Sensor;
-                break;
-            }
-            case "TempSensor": {
-                deviceType = DeviceType.TempSensor;
-                break;
-            }
-            case "Appliance": {
-                deviceType = DeviceType.Appliance;
-                break;
-            }
+            // case "Security": {
+            //     deviceType = DeviceType.Security;
+            //     break;
+            // }
+            // case "Sensor": {
+            //     deviceType = DeviceType.Sensor;
+            //     break;
+            // }
+            // case "TempSensor": {
+            //     deviceType = DeviceType.TempSensor;
+            //     break;
+            // }
+            // case "Appliance": {
+            //     deviceType = DeviceType.Appliance;
+            //     break;
+            // }
             case "SmartLock": {
                 deviceType = DeviceType.SmartLock;
                 break;

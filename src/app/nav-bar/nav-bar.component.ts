@@ -3,9 +3,11 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 import { AppComponent } from '../app.component';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 
 import { Router, RouterEvent, NavigationEnd, Routes} from '@angular/router';
+import { AreYouSureDialogComponent } from 'src/app/modals/are-you-sure-dialog/are-you-sure-dialog.component';
+import { AuthService } from '../auth.service';
 
 
 
@@ -28,7 +30,7 @@ export class NavBarComponent {
     '/home/devices' : ["Devices", 'dashboard'],
     '/home/account' : ["Account", 'account_circle'],
     '/home/settings' : ["Settings", 'settings'],
-    '/login' : ["Logout", 'exit_to_app'],
+    // '/login' : ["Logout", 'exit_to_app'],
   }
 
   notif_list = [
@@ -36,13 +38,17 @@ export class NavBarComponent {
     ['devices', 'New device installed'],
   ];
 
-
   public readonly route_titles = Object.keys(this.route_data_dict);
 
+  private _dialogResult: string;
+  private _logoutRoute = "/login";
+  
   constructor(
     private breakpointObserver: BreakpointObserver,
     public snackBar: MatSnackBar,
     private router: Router,
+    public dialog: MatDialog,
+    private _authService: AuthService
   ) 
   {
     //empty
@@ -54,7 +60,10 @@ export class NavBarComponent {
         filter((event:RouterEvent) => event instanceof NavigationEnd)
       ).subscribe(
         x => {
-          this.nav_title=this.route_data_dict[x.url][0]
+          if (this.route_data_dict[x.url] != undefined)
+          {
+            this.nav_title=this.route_data_dict[x.url][0]
+          }
         }
       )
    }
@@ -73,6 +82,25 @@ export class NavBarComponent {
   public notificationsClicked()
   {
     console.log("notif click registered");
+  }
+
+  public logOut()
+  {
+    let dialogRef = this.dialog.open(AreYouSureDialogComponent, {
+      width: '450px',
+      panelClass: 'slim-padding-dialogue',
+      data: "log out"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this._dialogResult = result;
+      if (this._dialogResult === "yes")
+      {
+        /* Are you sure? == yes */
+        this.router.navigate([this._logoutRoute]);
+        this._authService.logout();
+      }
+    });
   }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])

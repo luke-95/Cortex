@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AppComponent } from '../app.component';
 import { User } from '../models/User';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -35,7 +36,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService, 
     private router: Router,
-    fb: FormBuilder
+    fb: FormBuilder,
+    public snackBar: MatSnackBar
   ) 
   {
     this.loginForm = fb.group(
@@ -50,10 +52,31 @@ export class LoginComponent implements OnInit {
 
   public isFieldInvalid(field: string) {
     let retVal = true;
-    if (field == 'userName')
+    if (field == 'logUsername' && this.logUsername == undefined)
     {
-      retVal = false;
+      return true;
     }
+
+    if (field == 'logPassword' && this.logPassword == undefined)
+    {
+      return true;
+    }
+
+    if (field == 'regUsername' && this.regUsername == undefined)
+    {
+      return true;
+    }
+
+    if (field == 'regPassword' && this.regPassword == undefined)
+    {
+      return true;
+    }
+
+    if (field == 'regPasswordConf' && this.regPasswordConf == undefined)
+    {
+      return true;
+    }
+
     return retVal;
   }
 
@@ -67,10 +90,20 @@ export class LoginComponent implements OnInit {
       }
       else
       {
+        if (this.logUsername != undefined && this.logPassword != undefined && this.logUsername.length > 0 && this.logPassword.length > 0)
+        {
+          this.openSnackBar("Incorrect username and/or password", "Login failed!");
+        }
         this.authService.setLoginSuccessful(null, false);
-        console.log("Login failed!")
       }
     });
+  }
+ 
+  skipLogin()
+  {
+    this.authService.isLoggedIn = true;
+    this.authService.setLoginSuccessful(new User(1, "Lucian", "tomalucian11@gmail.com"), true);
+    this.router.navigate([this.home_route])
   }
 
   attemptRegister()
@@ -79,11 +112,6 @@ export class LoginComponent implements OnInit {
     this.authService.registerUser(user, this.regPassword);
   }
 
-  skipLogin()
-  {
-    this.authService.isLoggedIn = true;
-    this.router.navigate([this.home_route])
-  }
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
@@ -96,6 +124,12 @@ export class LoginComponent implements OnInit {
   onSubmit()
   {
     
+  }
+
+  private openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2500,
+    });
   }
 
 }

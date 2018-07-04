@@ -65,7 +65,7 @@ export class AddDeviceDialogComponent implements OnInit {
     {
       // Existing Device
       let selected_device = this._devicesService.devices.find(device => device.Name === this.selected_existing_device_name);
-      this.category.devices.push(selected_device);
+      this.category.addDevice(selected_device);
     }
 
     this.dialogRef.close();

@@ -15,6 +15,7 @@
 
       <mat-tab-group 
         [selectedIndex]="selected.value" 
+        (selectedTabChange)="tabChanged($event)"
         style="margin-left:5px">
         <ng-container *ngIf="categories.length < 1">
           <mat-tab label="All">

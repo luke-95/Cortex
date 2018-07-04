@@ -17,9 +17,10 @@
         <span>{{ route_data_dict[route][0] }}</span>      
       </a>
 
-      <!-- <a mat-list-item style="height:48px">
-
-      </a> -->
+      <a  mat-list-item (click)="logOut()">
+        <mat-icon class="menu-icon" aria-label="Logout" >exit_to_app</mat-icon>
+        <span>Logout</span>      
+      </a>
 
       <!-- <a mat-list-item>
         <div class="justify-content-center" style="height:100%;width:100%;"

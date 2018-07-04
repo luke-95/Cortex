@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Category } from 'src/app/models/category';
 import { DevicesService } from 'src/app/services/devices-service/devices.service';
-import { getPluralCategory } from '@angular/common/src/i18n/localization';
 import { Device } from 'src/app/models/Device';
-import { Observable } from 'rxjs/internal/Observable';
-import { variable } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +15,7 @@ export class CategoriesService {
 
     _devicesService.getDevices()
       .subscribe( data => {
+        this._devicesService.devices = data;
         this._devices = data;
         this.initCategories();
       }
