@@ -52,20 +52,20 @@
             </form>
           </mat-card-content>  
         </mat-tab>
-        <!-- <mat-tab label="Register">
+        <mat-tab label="Register">
           <mat-card-content>
             <mat-card-title class="register-title-padding">New Account</mat-card-title>
                 <div>
                   <mat-form-field appearance="outline">
                       <mat-label>Email</mat-label>
-                    <input matInput autocomplete="email"required>
+                    <input matInput [(ngModel)]="regEmail" autocomplete="email"required>
                     <mat-error *ngIf="email.invalid">{{ getEmailErrorMessage() }}</mat-error>
                   </mat-form-field>
                 </div>
                 <div>
                   <mat-form-field appearance="outline">
                     <mat-label>Username</mat-label>
-                    <input matInput autocomplete="username" required>
+                    <input matInput [(ngModel)]="regUsername" autocomplete="username" required>
                     <mat-error *ngIf="isFieldInvalid('userName')">
                       Please enter your user name
                     </mat-error>
@@ -74,7 +74,7 @@
                 <div>
                   <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input matInput [type]="hide_register_password? 'password' : 'text'"  autocomplete="new-password" required>
+                    <input matInput [(ngModel)]="regPassword" [type]="hide_register_password? 'password' : 'text'"  autocomplete="new-password" required>
                     <mat-icon matSuffix (click)="hide_register_password = !hide_register_password">{{hide_register_password ? 'visibility' : 'visibility_off'}}</mat-icon>
                     <mat-error *ngIf="isFieldInvalid('password')">
                       Please enter your password
@@ -84,7 +84,7 @@
                 <div>
                   <mat-form-field appearance="outline">
                     <mat-label>Confirm Password</mat-label>
-                    <input matInput type="password"  autocomplete="off" required>
+                    <input matInput [(ngModel)]="regPasswordConf" type="password"  autocomplete="off" required>
                     <mat-error *ngIf="isFieldInvalid('confirmPassword')">
                       Please confirm your password
                     </mat-error>
@@ -99,7 +99,7 @@
                   </button>
                 </div>
           </mat-card-content>
-        </mat-tab> -->
+        </mat-tab>
       </mat-tab-group>
     </div>
 </mat-card>

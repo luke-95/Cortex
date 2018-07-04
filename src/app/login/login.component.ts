@@ -3,6 +3,7 @@ import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AppComponent } from '../app.component';
+import { User } from '../models/User';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,12 @@ export class LoginComponent implements OnInit {
   private home_route = '/home/devices';
   hide_login_password = true;
   hide_register_password = true;
+
+
+  public regEmail: string;
+  public regUsername: string;
+  public regPassword: string;
+  public regPasswordConf: string;
 
   constructor(
     private authService: AuthService, 
@@ -61,7 +68,8 @@ export class LoginComponent implements OnInit {
 
   attemptRegister()
   {
-
+    let user = new User(0, this.regUsername, this.regEmail);
+    this.authService.registerUser(user, this.regPassword);
   }
 
   skipLogin()

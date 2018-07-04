@@ -19,6 +19,7 @@ export class TempSensorComponent implements OnInit {
 
   ngOnInit() {
     this.initChartData();
+    console.log("AYEAYE");
   }
   
   initChartData()

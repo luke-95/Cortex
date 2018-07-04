@@ -20,6 +20,7 @@ const httpOptions = {
 export class DevicesService {
   public devices: Device[];
   private _url: string;
+  private _baseUrl: string;
   private handleError: HandleError;
 
   constructor(private http: HttpClient, 
@@ -30,6 +31,7 @@ export class DevicesService {
   )
   {
       this.handleError = httpErrorHandler.createHandleError('DevicesService');
+      this._baseUrl = baseUrl;
       this._url = baseUrl + 'Devices/';
       
       http.get(this._url)
@@ -39,13 +41,11 @@ export class DevicesService {
   }
 
   getDevices() : Observable<Device[]> {
-      return this.http.get<Device[]>(this._url);
+      return this.http.get<Device[]>(this._baseUrl + "Users/" + this._authService.userId + "/Devices", httpOptions);
   }
 
 
   updateDevice(device: Device) : Observable<Device> {
-    let url = this._url + device.Id;
-    
     device.UserId = this._authService.userId;
 
     if (device.Type === "Audio")
@@ -54,8 +54,8 @@ export class DevicesService {
     }
     
     console.log("Updating device: " + JSON.stringify(device));
-    console.log(url);
-    return this.http.put<Device>(url, device, httpOptions)
+
+    return this.http.put<Device>(`${this._url}${device.Id}`, device, httpOptions)
     .pipe(
       catchError(this.handleError('updateDevice', device))
     );

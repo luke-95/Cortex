@@ -1,5 +1,5 @@
 export enum DeviceType {
-    TempSensor = "Temperature Sensor",
+    TempSensor = "TempSensor",
     Audio = "Audio",
     Video = "Video",
     SmartLock = "SmartLock",

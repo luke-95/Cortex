@@ -72,6 +72,10 @@ export class Device {
                 deviceType = DeviceType.Sensor;
                 break;
             }
+            case "TempSensor": {
+                deviceType = DeviceType.TempSensor;
+                break;
+            }
             case "Appliance": {
                 deviceType = DeviceType.Appliance;
                 break;

@@ -167,6 +167,6 @@ import { NotificationsService } from './services/notification-service/notificati
 export class AppModule { }
 
 export function getBaseUrl() {
-  return "https://cortex.azurewebsites.net/api/v1/";
-  // return "http://localhost:52932/api/v1/"
+  // return "https://cortex.azurewebsites.net/api/v1/";
+  return "http://localhost:52932/api/v1/"
 }

@@ -37,7 +37,11 @@ export class Category {
     
     removeFilter(filter: string) {
         this.filters.forEach( (filter_item, index) => {
-            if(filter_item === filter) this.filters.splice(index,1);
+            if(filter_item === filter) 
+            {
+                this.filters.splice(index,1);
+                this.filtered_devices = this.getFilteredDevices();
+            }
         });    
     }
 
