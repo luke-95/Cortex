@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
   hide_login_password = true;
   hide_register_password = true;
 
+  public logUsername: string;
+  public logPassword: string;
 
   public regEmail: string;
   public regUsername: string;
@@ -57,13 +59,18 @@ export class LoginComponent implements OnInit {
 
   attemptLogin()
   {
-    this.authService.isLoggedIn = false;
-
-    if (!this.authService.isLoggedIn) {
-      console.log("Not logged in!")
-    }
-    
-    this.router.navigate([this.home_route]);
+    this.authService.login(this.logUsername, this.logPassword).subscribe( data => {
+      if (data.Id)
+      {
+        this.authService.setLoginSuccessful(data, true);
+        this.router.navigate([this.home_route]);
+      }
+      else
+      {
+        this.authService.setLoginSuccessful(null, false);
+        console.log("Login failed!")
+      }
+    });
   }
 
   attemptRegister()

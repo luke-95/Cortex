@@ -14,7 +14,6 @@ const httpOptions = {
 @Injectable()
 export class AuthService {
   public isLoggedIn = false;
-  public userId = 1;
 
   private handleError: HandleError;
   private _usersUrl: string;
@@ -51,9 +50,15 @@ export class AuthService {
   }
 
   login(username, password): Observable<User> {
+    if (username != undefined && password != undefined)
+    {
+
+    }
+    console.log(`Attempting login for ${username}`);
+
     return this.http.get<User>(`${this._loginUrl}${username}/${password}` , httpOptions)
     .pipe(
-      catchError(this.handleError('loginUser', username))
+      catchError(this.handleError('loginUser', username)),
     )
   }
 
@@ -61,14 +66,13 @@ export class AuthService {
     this.isLoggedIn = false;
   }
 
+  setLoginSuccessful(user, isLogged)
+  {
+    this.user = user;
+    this.isLoggedIn = isLogged;
+  }
+
   getLoggedUser(): User {
-    if (this.isLoggedIn)
-    {
-      return this.user;
-    }
-    else
-    {
-      return null;
-    }
+    return this.user;
   }
 }

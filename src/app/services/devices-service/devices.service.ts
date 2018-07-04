@@ -33,20 +33,15 @@ export class DevicesService {
       this.handleError = httpErrorHandler.createHandleError('DevicesService');
       this._baseUrl = baseUrl;
       this._url = baseUrl + 'Devices/';
-      
-      http.get(this._url)
-          .subscribe((data: Device[]) => {
-          this.devices = data as Device[];
-      }, error => console.error(error));
   }
 
   getDevices() : Observable<Device[]> {
-      return this.http.get<Device[]>(this._baseUrl + "Users/" + this._authService.userId + "/Devices", httpOptions);
+      return this.http.get<Device[]>(this._baseUrl + "Users/" + this._authService.getLoggedUser().Id + "/Devices", httpOptions);
   }
 
 
   updateDevice(device: Device) : Observable<Device> {
-    device.UserId = this._authService.userId;
+    device.UserId = this._authService.getLoggedUser().Id;
 
     if (device.Type === "Audio")
     {
@@ -66,7 +61,7 @@ export class DevicesService {
     device.Id = Math.floor((Math.random() * 10000000) + 100);
 
     /* get User ID */
-    device.UserId = this._authService.userId;
+    device.UserId = this._authService.getLoggedUser().Id;
 
     if (device.Type === "Audio" && device.AudioDevice == null)
     {

@@ -24,11 +24,13 @@ export class DevicesComponent implements OnInit {
     private _categoriesService: CategoriesService,
     public dialog: MatDialog) 
   { 
-    this.categories = _categoriesService.categories;
+    this.categories = new Array<Category>();
+    this.devices = new Array<Device>();
     this.active_filters = [];
   }
 
   ngOnInit() {
+    this.categories = this._categoriesService.categories;
     this.initDevices();
   }
 

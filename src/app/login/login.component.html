@@ -8,11 +8,11 @@
       <mat-tab label="Login">
         <mat-card-content>
             <mat-card-title class="login-title-padding">Please login to continue</mat-card-title>
-            <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="attemptLogin()">
+            <form #myForm="ngForm" (ngSubmit)="attemptLogin()">
               <div>
                 <mat-form-field  appearance="outline">
                   <mat-label>Username</mat-label>
-                  <input matInput  autocomplete="username" required>
+                  <input matInput [(ngModel)]="logUsername" autocomplete="username" name="username" required>
                   <mat-error *ngIf="isFieldInvalid('userName')">
                     Please enter your user name
                   </mat-error>
@@ -21,7 +21,7 @@
               <div>
                 <mat-form-field  appearance="outline">
                   <mat-label>Password</mat-label>
-                  <input matInput [type]="hide_login_password? 'password' : 'text'"  autocomplete="current-password" required>
+                  <input matInput [(ngModel)]="logPassword" [type]="hide_login_password? 'password' : 'text'" name="log-password" autocomplete="current-password" required>
                   <mat-icon matSuffix (click)="hide_login_password = !hide_login_password">{{hide_login_password ? 'visibility' : 'visibility_off'}}</mat-icon>
                   <mat-error *ngIf="isFieldInvalid('password')">
                     Please enter your password
@@ -30,7 +30,7 @@
               </div>
               <div>
                 <mat-card-actions>
-                  <!-- <button mat-stroked-button
+                  <button mat-stroked-button
                     matTooltip="For Demo purposes"
                     color="primary"
                     type="button"
@@ -38,12 +38,12 @@
                     (click)='skipLogin()'
                     >
                     Skip
-                  </button> -->
+                  </button>
                   <button mat-raised-button 
                     color="primary"
                     type="submit"
                     class="login-button"
-                    (click)='skipLogin()'
+                    (click)='attemptLogin()'
                     >
                     Login
                   </button>
